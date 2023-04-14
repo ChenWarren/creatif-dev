@@ -5,7 +5,7 @@ const siteInfo = {
   description: 'A creative developer portfolio',
   sanityProjectId: 'iig2glgh', //Sanity projectID
   sanityDataset: 'production', //Sanity Dataset
-  version: '1.0', //Api version in sanity
+  version: '2023-04-14', //Api version in sanity
   sanityBasePath: '/admin', //Sanity base path
 }
 
