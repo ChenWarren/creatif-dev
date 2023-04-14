@@ -2,6 +2,7 @@
 
 const siteInfo = {
   title: 'Creatif Dev', //site title
+  description: 'A creative developer portfolio',
   sanityProjectId: 'iig2glgh', //Sanity projectID
   sanityDataset: 'production', //Sanity Dataset
   version: '1.0', //Api version in sanity
