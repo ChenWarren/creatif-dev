@@ -1,5 +1,6 @@
 import { defineConfig } from "sanity"
 import { deskTool } from "sanity/desk"
+import { codeInput } from "@sanity/code-input"
 import schemas from "./sanity/schemas"
 import siteInfo from "./settings/site-confit"
 
@@ -9,7 +10,7 @@ const config = defineConfig({
   dataset: siteInfo.sanityDataset,
   apiVersion: siteInfo.version,
   basePath: siteInfo.sanityBasePath,
-  plugins: [deskTool()],
+  plugins: [deskTool(), codeInput()],
   schema: { types: schemas}
 })
 
