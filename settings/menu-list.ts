@@ -1,0 +1,24 @@
+const menuList = [
+  {
+    title: 'Home',
+    link: '/'
+  },
+  {
+    title: 'Projects',
+    link: '/projects'
+  },
+  {
+    title: 'Blog',
+    link: '/blog'
+  },
+  {
+    title: 'About',
+    link: '/about'
+  },
+  {
+    title: 'Contact',
+    link: '/contact'
+  },
+]
+
+export default menuList
