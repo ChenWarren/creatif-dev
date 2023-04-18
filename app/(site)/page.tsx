@@ -1,6 +1,4 @@
-import Hero from "../../blocks/Hero"
-import HomeAbout from "../../blocks/HomeAbout"
-import HomeProjects from "../../blocks/HomeProjects"
+import { Hero, HomeAbout, HomeProjects } from "@/blocks"
 
 export default function Home() {
   return (
