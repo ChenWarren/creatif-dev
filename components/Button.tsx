@@ -1,5 +1,6 @@
 // Base button component
 "use client"
+
 export function Button({
   title = "Button",
   handler = () => void {}

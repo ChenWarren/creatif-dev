@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Logo from '../public/creatif-dev-logo-white.png'
-import menuList from "@/settings/menu-list";
+import menuList from "../settings/menu-list";
 
 export default function NavBar() {
   return (

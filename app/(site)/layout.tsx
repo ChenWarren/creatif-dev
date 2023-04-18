@@ -1,5 +1,5 @@
 import '../globals.css'
-import siteInfo from '@/settings/site-confit'
+import siteInfo from '../../settings/site-confit'
 import NavBar from '../../blocks/NavBar'
 
 export const metadata = {
