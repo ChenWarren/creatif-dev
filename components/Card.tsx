@@ -13,7 +13,7 @@ export const Card = ({
 }) => {
 
   return (
-    <div className="w-80 h-[32rem] shadow-sm bg-white drop-shadow">
+    <div className="w-80 h-[32rem] shadow-sm mb-5 bg-white drop-shadow">
       <Image
         src={imgUrl}
         alt={title}
