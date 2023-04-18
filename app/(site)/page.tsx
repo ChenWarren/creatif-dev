@@ -1,12 +1,11 @@
-import Scene from "@/components/3d"
-import Hero from "@/components/Hero"
-import HomeAbout from "@/components/HomeAbout"
+import { Hero, HomeAbout, HomeProjects } from "@/blocks"
 
 export default function Home() {
   return (
     <>
       <Hero/>
       <HomeAbout/>
+      <HomeProjects/>
     </>
   )
 }

@@ -1,6 +1,6 @@
 import '../globals.css'
 import siteInfo from '@/settings/site-confit'
-import NavBar from '../../components/NavBar'
+import NavBar from '../../blocks/NavBar'
 
 export const metadata = {
   title: siteInfo.title,
