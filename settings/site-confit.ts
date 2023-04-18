@@ -7,6 +7,7 @@ const siteInfo = {
   sanityDataset: 'production', //Sanity Dataset
   version: '2023-04-14', //Api version in sanity
   sanityBasePath: '/admin', //Sanity base path
+  baseUrl: 'creatif.dev' //Base url
 }
 
 export default siteInfo

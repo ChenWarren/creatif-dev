@@ -8,7 +8,7 @@ export default function HomeAbout() {
         <div className="col-span-1 sm:h-[400px] h-full">
           <div className="h-20 bg-white flex sm:justify-end sm:rounded-r-full">
             <div className="max-w-[448px] w-full px-4 flex items-center">
-              <h1 className="text-[48px]">About Me</h1>
+              <h1 className="text-[48px] uppercase">About Me</h1>
             </div>
           </div>
           <div className="h-ful flex sm:justify-end pb-10">
