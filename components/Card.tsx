@@ -15,7 +15,7 @@ export const Card = ({
         height={240}
       />
       <h2 className="p-4 mt-2 text-2xl">{title}</h2>
-      <p className="p-4">{excerpt}</p>
+      <p className="p-4 text-gray-500">{excerpt}</p>
     </div>
   )
 }

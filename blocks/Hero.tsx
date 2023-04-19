@@ -11,17 +11,17 @@ export default function Hero() {
           <div className="w-[200px] h-[160px] p-5 text-white">
             <h3 className="text-lg">ESLOODK</h3>
             <div className="w-2/3 h-2 bg-[#156766]"></div>
-            <p className="text-sm text-[#DFDFDF] mt-4">allows you to separate out your spending and set realistic limits</p>
+            <p className="text-sm text-gray-400 mt-4">allows you to separate out your spending and set realistic limits</p>
           </div>
           <div className="w-[200px] h-[160px] p-5 text-white">
             <h3 className="text-lg">ESLOODK</h3>
             <div className="w-2/3 h-2 bg-[#156766]"></div>
-            <p className="text-sm text-[#DFDFDF] mt-4">allows you to separate out your spending and set realistic limits</p>
+            <p className="text-sm text-gray-400 mt-4">allows you to separate out your spending and set realistic limits</p>
           </div>
           <div className="w-[200px] h-[160px] p-5 text-white">
             <h3 className="text-lg">ESLOODK</h3>
             <div className="w-2/3 h-2 bg-[#156766]"></div>
-            <p className="text-sm text-[#DFDFDF] mt-4">allows you to separate out your spending and set realistic limits</p>
+            <p className="text-sm text-gray-400 mt-4">allows you to separate out your spending and set realistic limits</p>
           </div>
         </div>
       </div>
@@ -29,10 +29,10 @@ export default function Hero() {
         <div className="sm:w-[450px] w-full sm:h-[601px] absolute top-0 mt-20 opacity-60 bg-black">
         </div>
         <div className="sm:w-[450px] h-[400px] absolute top-[10rem] px-10 mt-20 text-white ">
-          <h1 className="sm:text-[2.7rem] text-4xl mb-10">
+          <h1 className="sm:text-4xl text-3xl mb-10">
             Innovate, Design, Transform 
           </h1>
-          <p className="text-lg mb-10">
+          <p className="text-lg mb-10 text-gray-400">
             Innovate, Design, Transform Discover the Power of Creatif.dev&apos;s Modern Web and App Solutions!
           </p>
           <Button title="Get Started"/>
