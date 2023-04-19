@@ -25,7 +25,6 @@ export function FooterMenu({
           <Link href={item.href} key={i}>
             <li className="mb-2">{item.name}</li>
           </Link>
-
         ))}
       </ul>
     </>

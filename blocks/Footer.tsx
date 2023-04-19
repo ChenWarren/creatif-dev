@@ -1,5 +1,5 @@
 import siteInfo from "@/settings/site-confit"
-import { Logo, FooterMenu } from "@/components"
+import { Logo, FooterMenu, SocialMediaGroup } from "@/components"
 import { MenuItem } from "@/types/menuItem"
 
 const usefullLinks: MenuItem[] = [
@@ -17,6 +17,7 @@ export default function Footer() {
           <p className="pt-10 text-gray-400">
             It is a long established fact that a reader will be distracted by the
           </p>
+        {/* <SocialMediaGroup/> */}
         </div>
         <div className="col-span-1 mt-10 hidden sm:block">
           <FooterMenu title="Usefull Links" menuList={usefullLinks}/>
@@ -24,9 +25,7 @@ export default function Footer() {
         <div className="col-span-1 mt-10 hidden sm:block">
           <FooterMenu title="Usefull Links" menuList={usefullLinks}/>
         </div>
-        <div className="col-span-1 mt-10">
-          social media icons
-        </div>
+
       </section>
       <div className="flex justify-center items-center bg-gray-900 text-white p-1">
         <p className="text-sm">{`@2023 ${siteInfo.title}, all rights reserved`}</p>
@@ -36,3 +35,4 @@ export default function Footer() {
 }
 
 
+  
