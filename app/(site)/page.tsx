@@ -1,4 +1,4 @@
-import { Hero, HomeAbout, HomeProjects } from "@/blocks"
+import { Hero, HomeAbout, HomeBlog, HomeProjects } from "@/blocks"
 
 export default function Home() {
   return (
@@ -6,6 +6,7 @@ export default function Home() {
       <Hero/>
       <HomeAbout/>
       <HomeProjects/>
+      <HomeBlog/>
     </>
   )
 }

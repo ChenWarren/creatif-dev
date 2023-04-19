@@ -14,9 +14,9 @@ export default function HomeProjects() {
           </p>
         </div>
       </div>
-      <div className="w-full sm:h-[36rem] relative bg-white">
+      <div className="w-full sm:h-[34rem] relative bg-[#DFDFDF]">
         <div className="bg-white flex">
-          <div className="sm:h-16 h-10 sm:w-2/3 mb-5 w-full bg-[#5DD9BF]"></div>
+          <div className="sm:h-16 h-10 sm:w-2/3 pb-5 w-full bg-[#5DD9BF]"></div>
         </div>
         <div className="w-full sm:h-[32rem] sm:absolute sm:top-0 flex sm:flex-row flex-col justify-center items-center ">
           <Card/>

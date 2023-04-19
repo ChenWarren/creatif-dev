@@ -1,10 +1,4 @@
 import Image from "next/image"
-import placeHolder from '../public/placeholder.png'
-import siteInfo from "@/settings/site-confit"
-
-const imageLoader = ({ src, width, quality}: {src: string, width: string, quality: string}) => {
-  return `https://${siteInfo.baseUrl}/${src}?w=${width}&q=${quality || 75}`
-}
 
 export const Card = ({
   imgUrl='/placeholder.png',
