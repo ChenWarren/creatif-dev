@@ -18,7 +18,7 @@ export default function HomeBlog() {
         </div>
       </div>
       <div className="w-full sm:h-[28rem] relative bg-[#DFDFDF]">
-        <div className="w-full sm:h-[30rem] sm:absolute sm:top-0 flex sm:flex-row flex-col justify-center items-center ">
+        <div className="w-full sm:h-[30rem] sm:absolute sm:top-0 flex sm:flex-row flex-col justify-center items-center gap-4">
           <Card/>
           <Card/>
           <Card/>
