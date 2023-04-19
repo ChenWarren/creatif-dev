@@ -1,12 +1,37 @@
 import siteInfo from "@/settings/site-confit"
 import { Logo, FooterMenu, SocialMediaGroup } from "@/components"
 import { MenuItem } from "@/types/menuItem"
+import { SocialMedia } from "@/types/socialMedia"
 
 const usefullLinks: MenuItem[] = [
   {name: 'Link1', href: '#link1'},
   {name: 'Link2', href: '#link2'},
   {name: 'Link3', href: '#link3'},
 ]
+
+const socialMedias: SocialMedia[] = [
+  {
+    name: 'facebook',
+    link: '#',
+    iconName: 'BsFacebook'
+  },
+  {
+    name: 'linkedin',
+    link: '#',
+    iconName: 'BsLinkedin'
+  },
+  {
+    name: 'github',
+    link: '#',
+    iconName: 'BsGithub'
+  },
+  {
+    name: 'twitter',
+    link: '#',
+    iconName: 'BsTwitter'
+  },
+]
+
 
 export default function Footer() {
   return (
@@ -17,7 +42,7 @@ export default function Footer() {
           <p className="pt-10 text-gray-400">
             It is a long established fact that a reader will be distracted by the
           </p>
-        {/* <SocialMediaGroup/> */}
+        <SocialMediaGroup props={socialMedias}/>
         </div>
         <div className="col-span-1 mt-10 hidden sm:block">
           <FooterMenu title="Usefull Links" menuList={usefullLinks}/>

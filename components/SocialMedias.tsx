@@ -3,49 +3,49 @@ import {
   BsGithub, 
   BsFacebook, 
   BsTwitter, 
-  BsInstagram 
 } from 'react-icons/bs'
 import Link from "next/link"
-import { IconType } from 'react-icons'
+import { SocialMedia } from '@/types/socialMedia'
 
-interface SocialMediaGroupProps {
-  name: string
-  link: string, 
-  iconName: string
-}
-
-const defaultSocialMedias: SocialMediaGroupProps[] = [
+const defaultSocialMedias: SocialMedia[] = [
   {
-    name: 'FackBook',
+    name: 'facebook',
     link: '#',
     iconName: 'BsFacebook'
   },
   {
-    name: 'LinkedIn',
+    name: 'linkedin',
     link: '#',
     iconName: 'BsLinkedin'
   },
   {
-    name: 'Github',
+    name: 'github',
     link: '#',
     iconName: 'BsGithub'
   },
-] 
+  {
+    name: 'twitter',
+    link: '#',
+    iconName: 'BsTwitter'
+  },
+]
 
-function iconGenerator(name: string): any {
-  return <BsFacebook/>
-}
-
-export function SocialMediaGroup( props: SocialMediaGroupProps[]) {
-  const socialMedias = props || defaultSocialMedias
+export function SocialMediaGroup( {props}: {props: SocialMedia[]}) {
+  const socialMedias =  props || defaultSocialMedias
   return (
-    <div className="flex mt-10 gap-2 opacity-60">
-      { socialMedias.map((item,i) => (
-        <div key={i}>
-          {iconGenerator(item.name)}
-        </div>
-      ))}
-
+    <div className="flex mt-10 gap-4 opacity-60">
+      <Link href={(socialMedias.find(sm => sm.name === 'linkedin'))?.link || '#'}>
+        <BsLinkedin size={25}/>
+      </Link>
+      <Link href={(socialMedias.find(sm => sm.name === 'github'))?.link || '#'}>
+        <BsGithub size={25}/>
+      </Link>
+      <Link href={(socialMedias.find(sm => sm.name === 'twitter'))?.link || '#'}>
+        <BsTwitter size={25}/>
+      </Link>
+      <Link href={(socialMedias.find(sm => sm.name === 'facebook'))?.link || '#'}>
+        <BsFacebook size={25}/>
+      </Link>
     </div>
   )
 }
