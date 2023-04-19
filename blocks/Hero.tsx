@@ -4,7 +4,7 @@ export default function Hero() {
 
   return (
     <>
-      <section className="relative flex h-[600px] justify-center sm:flex-row px-6 items-center gap-8 brightness-50 bg-[url('/hero-background.png')] bg-cover">
+      <section className="relative flex h-[600px] justify-center sm:flex-row px-6 items-center brightness-75 gap-8 bg-[url('/hero-background.png')] bg-cover">
       </section>
       <div className="bg-[#1B3A4D] w-full sm:h-[200px]">
         <div className="max-w-4xl mx-auto sm:px-4 h-full flex flex-col sm:flex-row justify-between items-center">
@@ -26,7 +26,7 @@ export default function Hero() {
         </div>
       </div>
       <div className="max-w-4xl mx-auto sm:px-4">
-        <div className="sm:w-[450px] w-full sm:h-[601px] absolute top-0 mt-20 opacity-60 bg-black">
+        <div className="sm:w-[450px] w-full sm:h-[400px] absolute sm:top-[6rem] mt-20 opacity-95 bg-[#1B3A4D] rounded-2xl">
         </div>
         <div className="sm:w-[450px] h-[400px] absolute top-[10rem] px-10 mt-20 text-white ">
           <h1 className="sm:text-4xl text-3xl mb-10">
