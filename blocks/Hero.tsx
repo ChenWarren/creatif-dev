@@ -7,11 +7,11 @@ export default function Hero() {
       <section className="flex flex-col h-full justify-end items-center bg-[#5DD9BF]">
         <div className="sm:max-w-4xl w-full mx-auto px-4 pt-20">
           <div className="w-full md:px-10 text-white flex flex-col items-center mb-10">
-            <h1 className="sm:text-5xl uppercase text-3xl mb-10">
+            <h1 className="sm:text-5xl uppercase text-3xl text-center mb-10">
               Innovate, Design, Transform 
             </h1>
-            <p className="sm:text-lg mb-10 text-gray-100">
-              Innovate, Design, Transform Discover the Power of Creatif.dev&apos;s Modern Web and App Solutions!
+            <p className="max-w-[500px] sm:text-lg mb-10 text-gray-100 text-center">
+              Discover the Power of Creatif.dev&apos;s Modern Web and App Solutions!
             </p>
             <Button title="Get Started"/>
           </div>
