@@ -4,7 +4,7 @@ import { Logo } from "@/components";
 
 export default function NavBar() {
   return (
-    <header className="sticky top-0 z-10 bg-[#1B3A4D] text-white">
+    <header className="sticky top-0 z-10 bg-[#5DD9BF] text-white">
       <section className="max-w-4xl mx-auto p-4 flex justify-between items-center">
         <Logo />
         <div>
