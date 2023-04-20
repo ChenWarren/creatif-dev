@@ -20,9 +20,9 @@ export function FooterMenu({
     <>
       <h3>{title}</h3>
       <div className="w-24 h-2 bg-[#156766]"></div>
-      <ul className="pt-5 text-gray-400">
+      <ul className="pt-5">
         {menuList && menuList.map((item, i) => (
-          <Link href={item.href} key={i}>
+          <Link className="text-gray-400 hover:text-gray-200" href={item.href} key={i}>
             <li className="mb-2">{item.name}</li>
           </Link>
         ))}
