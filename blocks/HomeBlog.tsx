@@ -4,7 +4,7 @@ export default function HomeBlog() {
   return (
     <section className="w-full flex flex-col bg-[#DFDFDF]">
       <div className="h-10 w-full bg-[#5DD9BF] flex sm:hidden"></div>
-      <div className="w-full sm:h-[340px] bg-white">
+      <div className="w-full sm:h-[300px] bg-white">
         <div className="bg-white justify-end sm:flex hidden">
           <div className="sm:h-16 h-10 sm:w-1/2 pb-5 w-full bg-[#5DD9BF] sm:rounded-bl-full"></div>
         </div>

@@ -53,7 +53,7 @@ export default function Footer() {
 
       </section>
       <div className="flex justify-center items-center bg-gray-900 text-white p-1">
-        <p className="text-sm">{`@2023 ${siteInfo.title}, all rights reserved`}</p>
+        <p className="text-sm text-gray-500">{`@2023 ${siteInfo.title}, all rights reserved`}</p>
       </div>
     </footer>
   )
