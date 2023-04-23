@@ -1,6 +1,18 @@
+import { getBlogs } from "@/sanity/util/blog-controller"
+import { Blog } from "@/types/blog"
+import Link from "next/link"
 
-export default function Blog() {
+export default async function Blog() {
+  const blogs: Blog[] = await getBlogs()
+
   return (
-    <div>Blog</div>
+    <main>
+      <div>Blog</div>
+      {blogs.map((blog) => (
+        <Link key={blog._id} href={`/blog/${blog.slug}`}>
+          <h2>{blog.title}</h2>
+        </Link>
+      ))}
+    </main>
   )
 }
