@@ -1,8 +1,7 @@
+import { HomeAbout } from "@/blocks"
 
 export default function About() {
   return (
-    <main>
-      <div>About</div>
-    </main>
+    <HomeAbout/>
   )
 }

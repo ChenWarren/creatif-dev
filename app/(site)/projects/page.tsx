@@ -7,7 +7,7 @@ export default async function Projects() {
 
   return (
     <main className='max-w-4xl mx-auto p-4 flex flex-col'>
-      <h1>Projects</h1>
+      <h1 className="sm:text-3xl text-2xl">Projects</h1>
       <section>
         {projects.map((project) => (
           <div key={project._id} >

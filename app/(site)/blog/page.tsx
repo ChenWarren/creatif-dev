@@ -7,7 +7,7 @@ export default async function Blog() {
 
   return (
     <main className="max-w-4xl mx-auto p-4 flex flex-col">
-      <h1>Blog</h1>
+      <h1 className="sm:text-3xl text-2xl">Blog</h1>
       <section>
         {blogs.map((post) => (
           <div key={post._id} >
