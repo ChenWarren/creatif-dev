@@ -3,7 +3,6 @@ import {
   HomeAbout, 
   HomeBlog, 
   HomeProjects, 
-  Footer 
 } from "@/blocks"
 
 export default function Home() {
@@ -13,7 +12,6 @@ export default function Home() {
       <HomeBlog/>
       <HomeProjects/>
       <HomeAbout/>
-      <Footer/>
     </>
   )
 }

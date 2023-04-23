@@ -6,7 +6,7 @@ export default async function Blog() {
   const blogs: Blog[] = await getBlogs()
 
   return (
-    <main className="max-w-4xl mx-auto p-4 flex flex-col">
+    <main className="max-w-4xl min-h-screen mx-auto p-4 flex flex-col">
       <h1 className="sm:text-3xl text-2xl">Blog</h1>
       <section>
         {blogs.map((post) => (
