@@ -37,6 +37,16 @@ const project = {
       type: 'url'
     },
     {
+      name: 'category',
+      title: 'Category',
+      type: 'reference',
+      to: [
+        {
+          type: 'project-category',
+        }
+      ]
+    },
+    {
       name: "excerpt",
       title: "Excerpt",
       type: "text"

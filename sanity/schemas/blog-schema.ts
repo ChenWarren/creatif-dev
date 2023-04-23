@@ -32,9 +32,29 @@ const blog = {
       ]
     },
     {
+      name: "author",
+      title: "Author",
+      type: "reference",
+      to: [
+        {
+          type: "author"
+        }
+      ]
+    },
+    {
       name: "url",
       title: "URL",
       type: "url"
+    },
+    {
+      name: "category",
+      title: "Category",
+      type: "reference",
+      to: [
+        {
+          type: "post-category"
+        }
+      ]
     },
     {
       name: "excerpt",

@@ -1,7 +1,6 @@
 import { getProjects } from '@/sanity/util/project-controller'
 import { Project } from '@/types/project'
 import { Card } from '@/components'
-import Link from 'next/link'
 
 export default async function Projects() {
   const projects: Project[] = await getProjects()
@@ -11,16 +10,15 @@ export default async function Projects() {
       <h1>Projects</h1>
       <section>
         {projects.map((project) => (
-          <Link
-            key={project._id}
-            href={`/projects/${project.slug}`}
-          >
+          <div key={project._id} >
             <Card
               imgUrl={project.image}
               title={project.name}
               excerpt={project.excerpt}
+              baseHref='/projects'
+              slug={project.slug}
             />
-          </Link>
+          </div>
         ))}
       </section>
     </main>
