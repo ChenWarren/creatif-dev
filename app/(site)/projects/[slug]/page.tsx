@@ -1,6 +1,7 @@
 import { getProject } from '@/sanity/util/project-controller'
 import { PortableText } from '@portabletext/react'
 import Image from 'next/image'
+import { PortableTextBlock } from 'sanity'
 
 export default async function Project({params}: {params: {slug: string}}) {
   const { slug } = params
@@ -22,3 +23,4 @@ export default async function Project({params}: {params: {slug: string}}) {
     </main>
   )
 }
+
