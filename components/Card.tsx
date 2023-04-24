@@ -10,7 +10,7 @@ export const Card = ({
 }) => {
 
   return (
-    <div className="w-80 h-[32rem] shadow-sm mb-5 bg-white drop-shadow">
+    <div className="w-[18rem] h-[32rem] shadow-sm mb-5 bg-white drop-shadow">
       <Link
         href={`${baseHref}/${slug}`}
       >

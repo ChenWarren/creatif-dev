@@ -1,23 +1,25 @@
-const menuList = [
+import { MenuItem } from "@/types/menuItem"
+
+const menuList: MenuItem[] = [
   {
-    title: 'Home',
-    link: '/'
+    name: 'Home',
+    href: '/'
   },
   {
-    title: 'Projects',
-    link: '/projects'
+    name: 'Projects',
+    href: '/projects'
   },
   {
-    title: 'Blog',
-    link: '/blog'
+    name: 'Blog',
+    href: '/blog'
   },
   {
-    title: 'About',
-    link: '/about'
+    name: 'About',
+    href: '/about'
   },
   {
-    title: 'Contact',
-    link: '/contact'
+    name: 'Contact',
+    href: '/contact'
   },
 ]
 
