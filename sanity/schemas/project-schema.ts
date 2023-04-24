@@ -17,6 +17,12 @@ const project = {
       }
     },
     {
+      name: "featured",
+      title: "Featured",
+      type: "boolean",
+      initialValue: false,
+    },
+    {
       name: 'image',
       title: 'Image',
       type: 'image',

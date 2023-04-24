@@ -1,10 +1,12 @@
 import { getBlog } from "@/sanity/util/blog-controller"
 import Image from "next/image"
 import { PortableText } from "@portabletext/react"
+import { Blog } from "@/types/blog"
 
 export default async function Post({params}: {params: {slug: string}}) {
   const { slug } = params
-  const post = await getBlog(slug)
+  const post: Blog = await getBlog(slug)
+
   return (
     <main className='max-w-4xl min-h-screen mx-auto p-4 flex flex-col'>
       <h1 className="sm:text-3xl text-2xl">{post.title}</h1>

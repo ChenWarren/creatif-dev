@@ -1,6 +1,10 @@
 import { Card } from "../components/Card"
+import { Blog } from "@/types/blog"
 
-export default function HomeBlog() {
+export default function HomeBlog({
+  featuredBlogs,
+}: {featuredBlogs: Blog[]})
+ {
   return (
     <section className="w-full flex flex-col bg-[#DFDFDF]">
       <div className="h-10 w-full bg-[#5DD9BF] flex sm:hidden"></div>
@@ -17,13 +21,21 @@ export default function HomeBlog() {
           </p>
         </div>
       </div>
-      <div className="w-full sm:h-[28rem] relative bg-[#DFDFDF]">
-        <div className="w-full sm:h-[30rem] sm:absolute sm:top-0 flex sm:flex-row flex-col justify-center items-center gap-4">
-          <Card/>
-          <Card/>
-          <Card/>
+        <div className="w-full sm:h-[28rem] relative bg-[#DFDFDF]">
+          <div className="w-full sm:h-[30rem] sm:absolute sm:top-0 flex sm:flex-row flex-col justify-center items-center gap-4">
+          {featuredBlogs && featuredBlogs.map((post) => (
+            <div key={post._id} >
+              <Card 
+                imgUrl={post.image}
+                title={post.title}
+                excerpt={post.excerpt}
+                baseHref="/blog"
+                slug={post.slug}
+              />
+            </div>
+          ))}
+          </div>
         </div>
-      </div>
       <div className="bg-[#DFDFDF] flex">
         <div className="sm:h-16 h-10 sm:w-1/2 pb-5 w-full bg-[#5DD9BF] sm:rounded-tr-full"></div>
       </div>

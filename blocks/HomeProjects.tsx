@@ -1,6 +1,9 @@
 import { Card } from "../components/Card"
+import { Project } from "@/types/project"
 
-export default function HomeProjects() {
+export default function HomeProjects({
+  featuredProjects,
+}: {featuredProjects: Project[]}) {
   return (
     <section className="w-full flex flex-col bg-[#DFDFDF]">
       <div className="h-10 w-full bg-[#5DD9BF] flex sm:hidden"></div>
@@ -19,10 +22,17 @@ export default function HomeProjects() {
           <div className="sm:h-16 h-10 sm:w-2/3 pb-5 w-full bg-[#5DD9BF]"></div>
         </div>
         <div className="w-full sm:h-[32rem] sm:absolute sm:top-0 flex sm:flex-row flex-col justify-center items-center ">
-          <Card/>
-          <Card/>
-          <Card/>
-          <Card/>
+          {featuredProjects && featuredProjects.map((project) => (
+            <div key={project._id} >
+              <Card 
+                imgUrl={project.image}
+                title={project.name}
+                excerpt={project.excerpt}
+                baseHref="/projects"
+                slug={project.slug}
+              />
+            </div>
+          ))}
         </div>
       </div>
     </section>

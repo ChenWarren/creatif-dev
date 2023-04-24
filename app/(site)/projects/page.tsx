@@ -8,7 +8,7 @@ export default async function Projects() {
   return (
     <main className='max-w-4xl min-h-screen mx-auto p-4 flex flex-col'>
       <h1 className="sm:text-3xl text-2xl">Projects</h1>
-      <section>
+      <section className="flex flex-row gap-3">
         {projects.map((project) => (
           <div key={project._id} >
             <Card
