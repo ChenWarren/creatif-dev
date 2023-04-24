@@ -33,7 +33,7 @@ const defaultSocialMedias: SocialMedia[] = [
 export function SocialMediaGroup( {props}: {props: SocialMedia[]}) {
   const socialMedias =  props || defaultSocialMedias
   return (
-    <div className="flex mt-10 gap-4 ">
+    <div className="flex mt-10 gap-4 sm:justify-start justify-center">
       <Link className='opacity-60 hover:opacity-100' href={(socialMedias.find(sm => sm.name === 'linkedin'))?.link || '#'}>
         <BsLinkedin size={25}/>
       </Link>

@@ -30,5 +30,3 @@ export default function HomeAbout() {
     </section>
   )
 }
-
-// bg-[url('/home-about.png')]
