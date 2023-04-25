@@ -1,4 +1,11 @@
-// Base button component
+/**
+ * Button Component
+ * Params:
+ * title - button text: string
+ * handler - button click handler: function
+ */
+
+
 "use client"
 
 export function Button({

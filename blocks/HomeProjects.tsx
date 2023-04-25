@@ -6,6 +6,7 @@ export default function HomeProjects({
 }: {featuredProjects: Project[]}) {
   return (
     <section className="w-full flex flex-col bg-[#DFDFDF]">
+      {/* Heading start */}
       <div className="w-full sm:h-80 h-40 bg-white">
         <div className="w-full h-12 bg-[#49CEB2]"></div>
         <div className="h-full sm:max-w-4xl mx-auto p-4 flex flex-col justify-center">
@@ -17,21 +18,22 @@ export default function HomeProjects({
           </p>
         </div>
       </div>
-      <div className="w-full bg-[#DFDFDF]">
-        <div className="w-full sm:h-[30rem] flex sm:flex-row flex-col justify-center items-center gap-4 sm:mb-6 sm:mt-0 mb-2 mt-8">
-          {featuredProjects && featuredProjects.map((project) => (
-            <div key={project._id} >
-              <Card 
-                imgUrl={project.image}
-                title={project.name}
-                excerpt={project.excerpt}
-                baseHref="/projects"
-                slug={project.slug}
-              />
-            </div>
-          ))}
-        </div>
+      {/* Heading end  */}
+      {/* Projects grid start */}
+      <div className="grid sm:grid-cols-2 grid-cols-1 gap-6 mx-auto my-6 bg-[#DFDFDF]">
+        {featuredProjects && featuredProjects.map((project) => (
+          <div key={project._id} >
+            <Card 
+              imgUrl={project.image}
+              title={project.name}
+              excerpt={project.excerpt}
+              baseHref="/projects"
+              slug={project.slug}
+            />
+          </div>
+        ))}
       </div>
+      {/* Projects grid end */}
     </section>
   )
 }

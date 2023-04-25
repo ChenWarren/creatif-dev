@@ -25,10 +25,9 @@ export default function HomeBlog({
       {/* Heading end  */}
 
       {/* Blog post grid start */}
-      <div className="w-full bg-[#DFDFDF]">
-        <div className="w-full sm:h-[30rem] flex sm:flex-row flex-col justify-center items-center gap-4 sm:mb-6 sm:mt-0 mb-2 mt-8">
+      <div className="grid sm:grid-cols-2 grid-cols-1 gap-6 mx-auto my-6 bg-[#DFDFDF]">
         {featuredBlogs && featuredBlogs.map((post) => (
-          <div key={post._id}>
+          <div className="sm:col-span-1 mx-auto" key={post._id}>
             <Card 
               imgUrl={post.image}
               title={post.title}
@@ -38,25 +37,8 @@ export default function HomeBlog({
             />
           </div>
         ))}
-        </div>
       </div>
-      {/* Blog post grid end */}
-
-      <div className="grid sm:grid-cols-2 w-1/2 gap-2 mx-auto">
-        <div className="sm:col-span-1 mx-auto">
-          <Card />
-        </div>
-        <div className="sm:col-span-1 mx-auto">
-          <Card />
-        </div>
-        <div className="sm:col-span-1 mx-auto">
-          <Card />
-        </div>
-        <div className="sm:col-span-1 mx-auto">
-          <Card />
-        </div>
-      </div>
-
+      {/* Blog post grid end */} 
     </section>
   )
 }
