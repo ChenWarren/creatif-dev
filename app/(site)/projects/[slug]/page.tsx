@@ -1,7 +1,7 @@
 import { getProject } from '@/sanity/util/project-controller'
+import { RichTextImageComponent } from '@/components'
 import { PortableText } from '@portabletext/react'
 import Image from 'next/image'
-import { PortableTextBlock } from 'sanity'
 
 export default async function Project({params}: {params: {slug: string}}) {
   const { slug } = params
@@ -18,9 +18,14 @@ export default async function Project({params}: {params: {slug: string}}) {
         sizes='(max-width: 600px) 100%, 320px'
       />
       <div>
-        <PortableText value={project.content}/>
+        <PortableText value={project.content} components={components}/>
       </div>
     </main>
   )
 }
 
+const components = {
+  types: {
+    image: RichTextImageComponent
+  }
+}

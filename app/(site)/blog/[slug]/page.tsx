@@ -1,5 +1,6 @@
 import { getBlog } from "@/sanity/util/blog-controller"
 import Image from "next/image"
+import { RichTextImageComponent } from "@/components"
 import { PortableText } from "@portabletext/react"
 import { Blog } from "@/types/blog"
 
@@ -18,8 +19,14 @@ export default async function Post({params}: {params: {slug: string}}) {
         sizes='(max-width: 600px) 100%, 320px'
       />
       <div>
-        <PortableText value={post.content}/>
+        <PortableText value={post.content} components={components}/>
       </div>
     </main>
   )
+}
+
+const components = {
+  types: {
+    image: RichTextImageComponent
+  }
 }
