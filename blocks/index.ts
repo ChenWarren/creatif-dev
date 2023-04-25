@@ -7,6 +7,7 @@ import HomeAbout from "./HomeAbout"
 import HomeBlog from "./HomeBlog"
 import HomeProjects from "./HomeProjects"
 import NavBar from "./NavBar"
+import GridTest from "./GridTest"
 
 export {
   Footer,
@@ -14,5 +15,6 @@ export {
   HomeAbout,
   HomeBlog,
   HomeProjects,
-  NavBar
+  NavBar,
+  GridTest,
 }
