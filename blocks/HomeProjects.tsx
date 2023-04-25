@@ -6,9 +6,9 @@ export default function HomeProjects({
 }: {featuredProjects: Project[]}) {
   return (
     <section className="w-full flex flex-col bg-[#DFDFDF]">
-      <div className="h-10 w-full bg-[#5DD9BF] flex sm:hidden"></div>
-      <div className="w-full sm:h-[300px] bg-white">
-        <div className="h-full max-w-4xl mx-auto p-4 flex flex-col justify-center">
+      <div className="w-full sm:h-80 h-40 bg-white">
+        <div className="w-full h-12 bg-[#49CEB2]"></div>
+        <div className="h-full sm:max-w-4xl mx-auto p-4 flex flex-col justify-center">
           <h2 className="sm:text-3xl text-2xl uppercase">
             Projects
           </h2>
@@ -17,11 +17,8 @@ export default function HomeProjects({
           </p>
         </div>
       </div>
-      <div className="w-full sm:h-[34rem] relative bg-[#DFDFDF]">
-        <div className="bg-white flex">
-          <div className="sm:h-16 h-10 sm:w-2/3 pb-5 w-full bg-[#5DD9BF]"></div>
-        </div>
-        <div className="w-full sm:h-[32rem] sm:absolute sm:top-0 flex sm:flex-row flex-col justify-center items-center ">
+      <div className="w-full bg-[#DFDFDF]">
+        <div className="w-full sm:h-[30rem] flex sm:flex-row flex-col justify-center items-center gap-4 sm:mb-6 sm:mt-0 mb-2 mt-8">
           {featuredProjects && featuredProjects.map((project) => (
             <div key={project._id} >
               <Card 
