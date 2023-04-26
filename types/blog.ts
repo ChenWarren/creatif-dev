@@ -1,5 +1,6 @@
 import { PortableTextBlock } from "sanity"
 import { Author } from "./author"
+import { Category } from "./category"
 
 
 export type Blog = {
@@ -8,6 +9,7 @@ export type Blog = {
   title: string,
   author: Author,
   featured: boolean,
+  categories: Category,
   slug: string,
   image: string,
   url: string,

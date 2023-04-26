@@ -4,6 +4,7 @@ import { Button } from "./Button"
 import { Card } from "./Card"
 import { FooterMenu } from "./FooterMenu"
 import { Logo } from "./Logo"
+import { PhotoCard } from "./PhotoCard"
 import { RichTextImageComponent } from "./RichTextImageComponent"
 import { SocialMediaGroup } from "./SocialMedias"
 import { TextCard } from "./TextCard"
@@ -13,6 +14,7 @@ export {
   Card,
   FooterMenu,
   Logo,
+  PhotoCard,
   RichTextImageComponent,
   SocialMediaGroup,
   TextCard,

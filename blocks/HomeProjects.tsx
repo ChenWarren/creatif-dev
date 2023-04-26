@@ -1,4 +1,4 @@
-import { Card } from "../components/Card"
+import { Card, PhotoCard } from "@/components"
 import { Project } from "@/types/project"
 
 export default function HomeProjects({
@@ -23,10 +23,10 @@ export default function HomeProjects({
       <div className="grid sm:grid-cols-2 grid-cols-1 gap-6 mx-auto my-6 bg-[#DFDFDF]">
         {featuredProjects && featuredProjects.map((project) => (
           <div key={project._id} >
-            <Card 
+            <PhotoCard 
               imgUrl={project.image}
               title={project.name}
-              excerpt={project.excerpt}
+              category={project.category.name}
               baseHref="/projects"
               slug={project.slug}
             />

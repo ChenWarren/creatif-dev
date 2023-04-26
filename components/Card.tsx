@@ -20,7 +20,7 @@ export const Card = ({
 }) => {
 
   return (
-    <div className="sm:max-w-lg h-[32rem] shadow-sm bg-white drop-shadow rounded-md">
+    <div className="sm:max-w-lg h-[32rem] shadow-sm bg-white drop-shadow rounded-md overflow-hidden">
       <Link
         href={`${baseHref}/${slug}`}
       >
@@ -31,7 +31,7 @@ export const Card = ({
             width={520}
             height={300}
             style={{maxWidth: '100%', margin: 'auto', height: '300px', objectFit: 'cover'}}
-            className="rounded-t-md"
+            className="rounded-t-md hover:scale-105 hover:brightness-75 transition-all duration-300"
           />
         </div>
         <h2 className="w-full h-20 p-4 mt-2 text-xl">{title.length > 52 ? `${title.slice(0.52)}...`: title}</h2>

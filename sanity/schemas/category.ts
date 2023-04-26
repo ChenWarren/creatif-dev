@@ -7,6 +7,11 @@ const postCategory = {
       name: 'name',
       title: 'Name',
       type: 'string'
+    },
+    {
+      name: 'description',
+      title: 'Description',
+      type: 'text'
     }
   ]
 }
@@ -20,6 +25,11 @@ const projectCategory = {
       name: 'name',
       title: 'Name',
       type: 'string'
+    },
+    {
+      name: 'description',
+      title: 'Description',
+      type: 'text'
     }
   ]
 }

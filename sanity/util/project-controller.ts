@@ -10,6 +10,9 @@ export async function getProjects(): Promise<Project[]> {
       _createAt,
       name,
       featured,
+      category-> {
+        name
+      },
       "slug": slug.current,
       "image": image.asset->url,
       url,
@@ -25,6 +28,9 @@ export async function getProject(slug: string): Promise<Project> {
       _createAt,
       name,
       featured,
+      category-> {
+        name
+      },
       "slug": slug.current,
       "image": image.asset->url,
       url,
