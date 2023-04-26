@@ -1,4 +1,4 @@
-import { Button } from "../components/Button"
+import { TextCard, Button } from "@/components"
 
 export default function Hero() {
 
@@ -21,21 +21,9 @@ export default function Hero() {
 
       <div className="bg-[#1B3A4D] w-full sm:h-[200px]">
         <div className="max-w-4xl mx-auto sm:px-4 h-full flex flex-col sm:flex-row justify-between items-center">
-          <div className="w-[200px] h-[160px] p-5 text-white">
-            <h3 className="text-lg">ESLOODK</h3>
-            <div className="w-2/3 h-2 bg-[#156766]"></div>
-            <p className="text-sm text-gray-400 mt-4">allows you to separate out your spending and set realistic limits</p>
-          </div>
-          <div className="w-[200px] h-[160px] p-5 text-white">
-            <h3 className="text-lg">ESLOODK</h3>
-            <div className="w-2/3 h-2 bg-[#156766]"></div>
-            <p className="text-sm text-gray-400 mt-4">allows you to separate out your spending and set realistic limits</p>
-          </div>
-          <div className="w-[200px] h-[160px] p-5 text-white">
-            <h3 className="text-lg">ESLOODK</h3>
-            <div className="w-2/3 h-2 bg-[#156766]"></div>
-            <p className="text-sm text-gray-400 mt-4">allows you to separate out your spending and set realistic limits</p>
-          </div>
+          <TextCard title="Frontend" description="Topics about Frontend"/>
+          <TextCard title="CMS" description="Topics about CMS"/>
+          <TextCard title="Node.js" description="Topics about Node.js"/>
         </div>
       </div>
     </>
@@ -43,3 +31,6 @@ export default function Hero() {
 }
 
 
+
+
+  

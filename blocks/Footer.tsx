@@ -45,7 +45,7 @@ export default function Footer() {
         <SocialMediaGroup props={socialMedias}/>
         </div>
         <div className="col-span-1 mt-10 hidden sm:block">
-          <FooterMenu title="Usefull Links" menuList={usefullLinks}/>
+          <FooterMenu title="Quick Links" menuList={usefullLinks}/>
         </div>
         <div className="col-span-1 mt-10 hidden sm:block">
           <FooterMenu title="Usefull Links" menuList={usefullLinks}/>

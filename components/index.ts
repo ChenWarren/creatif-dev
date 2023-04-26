@@ -6,6 +6,7 @@ import { FooterMenu } from "./FooterMenu"
 import { Logo } from "./Logo"
 import { RichTextImageComponent } from "./RichTextImageComponent"
 import { SocialMediaGroup } from "./SocialMedias"
+import { TextCard } from "./TextCard"
 
 export {
   Button,
@@ -13,5 +14,6 @@ export {
   FooterMenu,
   Logo,
   RichTextImageComponent,
-  SocialMediaGroup
+  SocialMediaGroup,
+  TextCard,
 }
