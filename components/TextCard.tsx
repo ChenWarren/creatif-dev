@@ -1,3 +1,9 @@
+/**
+ * Simple Card component with text title and text description
+ * Params:
+ * title: text title,
+ * description: text description
+ */
 
 export function TextCard({
   title = 'Title',

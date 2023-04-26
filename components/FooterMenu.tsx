@@ -1,3 +1,11 @@
+/**
+ * Menu / Links in Footer section
+ * Such as "Quick Links", "Useful Links"
+ * Params:
+ * title: The title for the links
+ * menuList: An array with type of MenuItem
+ */
+
 import Link from "next/link"
 import { MenuItem } from "@/types/menuItem";
 

@@ -1,3 +1,9 @@
+/**
+ * Social media group with icons and links
+ * TO-DO:
+ * Dynamically load icons
+ */
+
 import { 
   BsLinkedin, 
   BsGithub, 
