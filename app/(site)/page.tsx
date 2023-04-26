@@ -3,7 +3,6 @@ import {
   HomeAbout, 
   HomeBlog, 
   HomeProjects,
-  GridTest 
 } from "@/blocks"
 import { Blog } from "@/types/blog"
 import { Project } from "@/types/project"

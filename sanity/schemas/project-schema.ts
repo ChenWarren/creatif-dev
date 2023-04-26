@@ -43,12 +43,15 @@ const project = {
       type: 'url'
     },
     {
-      name: 'category',
-      title: 'Category',
-      type: 'reference',
-      to: [
+      name: 'categories',
+      title: 'Categories',
+      type: 'array',
+      of: [
         {
-          type: 'project-category',
+          type: 'reference',
+          to: {
+            type: 'project-category'
+          }
         }
       ]
     },

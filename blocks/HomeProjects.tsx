@@ -1,4 +1,4 @@
-import { Card, PhotoCard } from "@/components"
+import { PhotoCard } from "@/components"
 import { Project } from "@/types/project"
 
 export default function HomeProjects({
@@ -26,7 +26,7 @@ export default function HomeProjects({
             <PhotoCard 
               imgUrl={project.image}
               title={project.name}
-              category={project.category.name}
+              categories={project.categories}
               baseHref="/projects"
               slug={project.slug}
             />

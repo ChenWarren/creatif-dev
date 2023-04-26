@@ -6,7 +6,7 @@ export type Project = {
   _createAt: Date,
   name: string,
   featured: boolean,
-  category: Category,
+  categories: Category[],
   slug: string,
   image: string,
   url: string,
