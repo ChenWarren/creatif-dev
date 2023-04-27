@@ -17,41 +17,38 @@ const defaultSocialMedias: SocialMedia[] = [
   {
     name: 'facebook',
     link: '#',
-    iconName: 'BsFacebook'
+    iconName: 'BsFacebook',
+    iconComponent: BsFacebook
   },
   {
     name: 'linkedin',
     link: '#',
-    iconName: 'BsLinkedin'
+    iconName: 'BsLinkedin',
+    iconComponent: BsLinkedin
   },
   {
     name: 'github',
     link: '#',
-    iconName: 'BsGithub'
+    iconName: 'BsGithub',
+    iconComponent: BsGithub
   },
   {
     name: 'twitter',
     link: '#',
-    iconName: 'BsTwitter'
+    iconName: 'BsTwitter',
+    iconComponent: BsTwitter
   },
 ]
 
 export function SocialMediaGroup( {props}: {props: SocialMedia[]}) {
   const socialMedias =  props || defaultSocialMedias
   return (
-    <div className="flex mt-10 gap-4 sm:justify-start justify-center">
-      <Link className='opacity-60 hover:opacity-100' href={(socialMedias.find(sm => sm.name === 'linkedin'))?.link || '#'}>
-        <BsLinkedin size={25}/>
-      </Link>
-      <Link className='opacity-60 hover:opacity-100' href={(socialMedias.find(sm => sm.name === 'github'))?.link || '#'}>
-        <BsGithub size={25}/>
-      </Link>
-      <Link className='opacity-60 hover:opacity-100' href={(socialMedias.find(sm => sm.name === 'twitter'))?.link || '#'}>
-        <BsTwitter size={25}/>
-      </Link>
-      <Link className='opacity-60 hover:opacity-100' href={(socialMedias.find(sm => sm.name === 'facebook'))?.link || '#'}>
-        <BsFacebook size={25}/>
-      </Link>
+    <div className="flex mt-10 gap-4 sm:justify-start justify-center">     
+      {defaultSocialMedias.map(sm => (
+        <Link key={sm.name} href={sm.link}>
+          <sm.iconComponent size={25}/>
+        </Link>
+      ))}
     </div>
   )
 }

@@ -21,9 +21,9 @@ export default function Hero() {
 
       <div className="bg-[#1B3A4D] w-full sm:h-[200px]">
         <div className="max-w-4xl mx-auto sm:px-4 h-full flex flex-col sm:flex-row justify-between items-center">
-          <TextCard title="Next.js" description="Topics about Frontend development with Next.js and TypeScript"/>
-          <TextCard title="CMS" description="Topics about integrating popular CMS with frontend technologies"/>
-          <TextCard title="Cloud" description="Topics about everything about cloud and latest web technologies"/>
+          <TextCard title="Web" description="Craft engaging websites with cutting-edge technology"/>
+          <TextCard title="E-commerce" description="Build robust online stores that drive revenue"/>
+          <TextCard title="Support" description="Ensure websites run smoothly with reliable support services"/>
         </div>
       </div>
     </>
