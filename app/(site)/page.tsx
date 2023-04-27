@@ -1,3 +1,7 @@
+/**
+ * Home page
+ */
+
 import { 
   Hero, 
   HomeAbout, 

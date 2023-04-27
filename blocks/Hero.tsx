@@ -16,7 +16,7 @@ export default function Hero() {
             <Button title="Get Started"/>
           </div>
         </div>
-        <div className="sm:max-w-[800px] sm:h-[350px] w-full h-40 rounded-t-3xl bg-[url('/hero-main.png')] bg-cover bg-no-repeat"></div>
+        <div className="sm:max-w-[800px] sm:h-[400px] w-full h-40 rounded-t-3xl bg-[url('/hero-main.png')] bg-cover bg-no-repeat"></div>
       </section>
 
       <div className="bg-[#1B3A4D] w-full sm:h-[200px]">
