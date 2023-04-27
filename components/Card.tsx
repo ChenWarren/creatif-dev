@@ -31,7 +31,7 @@ export const Card = ({
             width={520}
             height={300}
             style={{maxWidth: '100%', margin: 'auto', height: '300px', objectFit: 'cover'}}
-            className="rounded-t-md hover:scale-105 hover:brightness-100 brightness-90 transition-all duration-300"
+            className="rounded-t-md hover:scale-105 hover:brightness-100 brightness-95 transition-all duration-300"
           />
         </div>
         <h2 className="w-full h-20 p-4 mt-2 text-xl">{title.length > 52 ? `${title.slice(0.52)}...`: title}</h2>

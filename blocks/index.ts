@@ -8,6 +8,7 @@ import HomeBlog from "./HomeBlog"
 import HomeProjects from "./HomeProjects"
 import NavBar from "./NavBar"
 import GridTest from "./GridTest"
+import PageHeader from "./PageHeader"
 
 export {
   Footer,
@@ -17,4 +18,5 @@ export {
   HomeProjects,
   NavBar,
   GridTest,
+  PageHeader,
 }

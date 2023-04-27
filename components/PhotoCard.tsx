@@ -36,7 +36,7 @@ export function PhotoCard({
             width={512}
             height={512}
             style={{maxWidth: '100%', margin: 'auto', height: '512px', objectFit: 'cover'}}
-            className="rounded-md hover:scale-105 hover:brightness-100 brightness-75 transition-all duration-300"
+            className="rounded-md hover:scale-105 hover:brightness-100 brightness-95 transition-all duration-300"
           />
         </div>
         <div className="absolute flex flex-col justify-start bottom-4 text-[white]">
