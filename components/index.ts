@@ -6,7 +6,7 @@ import { FooterMenu } from "./FooterMenu"
 import { Logo } from "./Logo"
 import { PhotoCard } from "./PhotoCard"
 import { RichTextImageComponent } from "./RichTextImageComponent"
-import { SocialMediaGroup } from "./SocialMedias"
+import { SocialMediaGroup } from "./SocialMedia"
 import { TextCard } from "./TextCard"
 
 export {

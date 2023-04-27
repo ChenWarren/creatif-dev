@@ -1,3 +1,8 @@
+/**
+ * Social Media List
+ * For SocialMedia Component
+ */
+
 import { SocialMedia } from "@/types/socialMedia"
 import { 
   BsLinkedin, 
@@ -9,25 +14,25 @@ import {
 const socialMedia: SocialMedia[] = [
   {
     name: 'facebook',
-    link: '#',
+    link: 'https://www.facebook.com/',
     iconName: 'BsFacebook',
     iconComponent: BsFacebook
   },
   {
     name: 'linkedin',
-    link: '#',
+    link: 'https://www.linkedin.com/',
     iconName: 'BsLinkedin',
     iconComponent: BsLinkedin
   },
   {
     name: 'github',
-    link: '#',
+    link: 'https://github.com/',
     iconName: 'BsGithub',
     iconComponent: BsGithub
   },
   {
     name: 'twitter',
-    link: '#',
+    link: 'https://twitter.com/',
     iconName: 'BsTwitter',
     iconComponent: BsTwitter
   },
