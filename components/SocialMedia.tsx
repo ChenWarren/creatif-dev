@@ -1,7 +1,7 @@
 /**
  * Social media group with icons and links
- * TO-DO:
- * Dynamically load icons
+ * Params:
+ * SocialMedia array
  */
 
 import { 
@@ -13,7 +13,7 @@ import {
 import Link from "next/link"
 import { SocialMedia } from '@/types/socialMedia'
 
-const defaultSocialMedias: SocialMedia[] = [
+const defaultSocialMedia: SocialMedia[] = [
   {
     name: 'facebook',
     link: '#',
@@ -41,10 +41,10 @@ const defaultSocialMedias: SocialMedia[] = [
 ]
 
 export function SocialMediaGroup( {props}: {props: SocialMedia[]}) {
-  const socialMedias =  props || defaultSocialMedias
+  const socialMedia =  props || defaultSocialMedia
   return (
     <div className="flex mt-10 gap-4 sm:justify-start justify-center">     
-      {defaultSocialMedias.map(sm => (
+      {socialMedia.map(sm => (
         <Link key={sm.name} href={sm.link}>
           <sm.iconComponent size={25}/>
         </Link>
