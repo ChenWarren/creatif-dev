@@ -1,5 +1,4 @@
-import siteInfo from "@/settings/site-confit"
-
+import { siteInfo } from "@/settings"
 
 const ClientConfig =  {
   projectId: siteInfo.sanityProjectId,
