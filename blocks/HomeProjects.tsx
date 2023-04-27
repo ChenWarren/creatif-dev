@@ -9,7 +9,7 @@ export default function HomeProjects({
       {/* Heading start */}
       <div className="w-full sm:h-80 h-40 bg-white">
         <div className="w-full h-12 bg-[#49CEB2]"></div>
-        <div className="h-full sm:max-w-4xl mx-auto p-4 flex flex-col justify-center">
+        <div className="h-full sm:max-w-5xl mx-auto p-4 flex flex-col justify-center">
           <h2 className="sm:text-3xl text-2xl uppercase">
             Projects
           </h2>
@@ -22,7 +22,7 @@ export default function HomeProjects({
       {/* Projects grid start */}
       <div className="grid sm:grid-cols-2 grid-cols-1 gap-6 mx-auto my-6 bg-[#DFDFDF]">
         {featuredProjects && featuredProjects.map((project) => (
-          <div key={project._id} >
+          <div className="sm:col-span-1 sm:mx-auto mx-2" key={project._id} >
             <PhotoCard 
               imgUrl={project.image}
               title={project.name}

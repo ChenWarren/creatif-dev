@@ -2,7 +2,6 @@
  * Social Media List
  * For SocialMedia Component
  */
-
 import { SocialMedia } from "@/types/socialMedia"
 import { 
   BsLinkedin, 

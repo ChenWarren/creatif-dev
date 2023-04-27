@@ -16,7 +16,7 @@ export default function NavBar() {
 
   return (
     <header className="sticky top-0 z-10 bg-[#5DD9BF] text-white">
-      <section className="max-w-4xl mx-auto p-4 flex justify-between items-center">
+      <section className="max-w-5xl mx-auto p-4 flex justify-between items-center">
         <Logo />
         <div>
           {/* Mobile menu start */}

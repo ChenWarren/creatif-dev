@@ -12,7 +12,7 @@ const usefullLinks: MenuItem[] = [
 export default function Footer() {
   return (
     <footer className="w-full flex flex-col bg-[#1B3A4D]">
-      <section className="sm:h-[350px] text-white w-full max-w-4xl mx-auto p-4 grid sm:grid-cols-4 gap-8" >
+      <section className="sm:h-[350px] text-white w-full max-w-5xl mx-auto p-4 grid sm:grid-cols-4 gap-8" >
         <div className="col-span-2 mt-10 flex flex-col sm:items-start items-center">
           <Logo/>
           <p className="pt-10 text-gray-400 sm:text-start text-center">

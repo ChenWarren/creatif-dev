@@ -1,11 +1,12 @@
 import { TextCard, Button } from "@/components"
+import { services } from "@/settings"
 
 export default function Hero() {
 
   return (
     <>
       <section className="flex flex-col h-full justify-end items-center bg-[#5DD9BF]">
-        <div className="sm:max-w-4xl w-full mx-auto px-4 pt-20">
+        <div className="sm:max-w-5xl sm:h-[500px] w-full mx-auto px-4 pt-20">
           <div className="w-full md:px-10 text-white flex flex-col items-center mb-10">
             <h1 className="sm:text-5xl uppercase text-3xl text-center mb-10">
               Frontend, Backend, Web 
@@ -16,14 +17,14 @@ export default function Hero() {
             <Button title="Get Started"/>
           </div>
         </div>
-        <div className="sm:max-w-[800px] sm:h-[400px] w-full h-40 rounded-t-3xl bg-[url('/hero-main.png')] bg-cover bg-no-repeat"></div>
+        <div className="sm:max-w-5xl sm:h-[400px] w-full h-52 sm:rounded-t-3xl bg-[url('/hero-main.png')] bg-cover bg-no-repeat"></div>
       </section>
 
-      <div className="bg-[#1B3A4D] w-full sm:h-[200px]">
-        <div className="max-w-4xl mx-auto sm:px-4 h-full flex flex-col sm:flex-row justify-between items-center">
-          <TextCard title="Web" description="Craft engaging websites with cutting-edge technology"/>
-          <TextCard title="E-commerce" description="Build robust online stores that drive revenue"/>
-          <TextCard title="Support" description="Ensure websites run smoothly with reliable support services"/>
+      <div className="bg-[#1B3A4D] w-full sm:h-[300px]">
+        <div className="max-w-5xl mx-auto sm:px-4 h-full flex flex-col sm:flex-row justify-between items-center">
+          {services && services.map((service, index) => (
+            <TextCard key={index} props={service}/>
+          ))}
         </div>
       </div>
     </>
