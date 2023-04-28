@@ -18,7 +18,7 @@ function ContactForm() {
         id='name'
         value={values.name}
         onChange={handleChange}
-        className="p-4 mb-6 outline-none border-b focus:border-[#49CEB2] focus:border-b-2"
+        className="p-4 mb-6 outline-none border-b-2 focus:border-[#49CEB2] focus:border-b-2"
       />
 
       <label className="my-4 font-medium" htmlFor="email">Your Email <span className="text-red-500">*</span></label>
@@ -28,7 +28,7 @@ function ContactForm() {
         id='email'
         value={values.email}
         onChange={handleChange}
-        className="p-4 mb-6 outline-none border-b focus:border-[#49CEB2] focus:border-b-2"
+        className="p-4 mb-6 outline-none border-b-2 focus:border-[#49CEB2] focus:border-b-2"
       />
 
       <label className="my-4 font-medium" htmlFor="message">Your message <span className="text-red-500">*</span></label>
@@ -37,7 +37,7 @@ function ContactForm() {
         id='message'
         value={values.message}
         onChange={handleTextareaChange}
-        className="mb-6 p-4 outline-none border-b focus:border-[#49CEB2] focus:border-b-2"
+        className="mb-6 p-4 outline-none border-b-2 focus:border-[#49CEB2] focus:border-b-2"
         rows={5}
       />
       <button type="submit" value='Submit' className="max-w-sx uppercase bg-[#FE7D75] text-white my-2 px-8 py-2 rounded-full hover:bg-[#D7605F] active:bg-[#D7605F] active:opacity-70 active:ease-in-out">Send</button>
