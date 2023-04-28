@@ -1,4 +1,4 @@
-import { PageHeader } from '@/blocks'
+import { ContactForm, PageHeader } from '@/blocks'
 import { PageHeaderProps } from '@/types/pageHeaderProps'
 
 const contactHeaderProps: PageHeaderProps = {
@@ -12,7 +12,7 @@ export default function Contac() {
     <>
       <PageHeader props={contactHeaderProps}/>
       <main className='max-w-5xl min-h-screen mx-auto p-4 flex flex-col'>
-
+        <ContactForm/>
       </main>
     </>
   )
