@@ -1,13 +1,22 @@
 "use client"
-import { useContactForm } from "@/lib"
+import { useContactForm, sendEmail } from "@/lib"
 
 function ContactForm() {
   const { values, handleChange, handleTextareaChange } = useContactForm()
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     console.log(values)
+    try {
+      const req = await sendEmail(values)
+      if (req.status === 200) {
+        console.log('success')
+      }
+    } catch (error) {
+      console.log(error)
+    }
   }
+  
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col">
@@ -27,6 +36,16 @@ function ContactForm() {
         type="email" 
         id='email'
         value={values.email}
+        onChange={handleChange}
+        className="p-4 mb-6 outline-none border-b-2 focus:border-[#49CEB2] focus:border-b-2"
+      />
+
+      <label className="mb-4 font-medium" htmlFor="subject">Subject <span className="text-red-500">*</span></label>
+      <input 
+        required
+        type="text" 
+        id='subject'
+        value={values.subject}
         onChange={handleChange}
         className="p-4 mb-6 outline-none border-b-2 focus:border-[#49CEB2] focus:border-b-2"
       />
