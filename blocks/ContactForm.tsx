@@ -6,7 +6,6 @@ function ContactForm() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    console.log(values)
     try {
       const req = await sendEmail(values)
       if (req.status === 200) {

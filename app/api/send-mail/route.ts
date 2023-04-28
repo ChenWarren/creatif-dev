@@ -9,8 +9,9 @@ interface EmailMessage {
 }
 
 export async function POST(request: Request, response: Response) {
+  return new Response('Hello World!', { status: 200 })
+
   const body = await request.json()
-  console.log(body)
 
   const message: EmailMessage = {
     from: body.email,
