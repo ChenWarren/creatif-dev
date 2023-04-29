@@ -2,6 +2,7 @@ import { useState } from "react"
 
 function useContactForm() {
   const [values, setValues] = useState({
+    token: '',
     name: '',
     email: '',
     subject: '',
@@ -24,10 +25,19 @@ function useContactForm() {
         [event.target.id]: event.target.value
       }
     })
+  }
+
+  const handleToken = (token: string) => {
+    setValues(prevState => {
+      return {
+        ...prevState,
+        token: token
+      }
+    })
   
   }
 
-  return { values, handleChange, handleTextareaChange}
+  return { values, handleChange, handleTextareaChange,  handleToken}
 }
 
 export default useContactForm

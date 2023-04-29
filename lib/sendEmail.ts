@@ -1,6 +1,7 @@
 import axios from 'axios'
 
 interface sentEmailProps {
+  token: string;
   name: string;
   email: string;
   subject: string;
