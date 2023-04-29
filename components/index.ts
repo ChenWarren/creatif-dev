@@ -6,6 +6,7 @@ import { FooterMenu } from "./FooterMenu"
 import { GoogleAnalytics } from "./GoogleAnalytics"
 import { Logo } from "./Logo"
 import { PhotoCard } from "./PhotoCard"
+import { ReCAPTCHA } from "./Recaptcha"
 import { RichTextImageComponent } from "./RichTextImageComponent"
 import { SocialMediaGroup } from "./SocialMedia"
 import { TextCard } from "./TextCard"
@@ -17,6 +18,7 @@ export {
   GoogleAnalytics,
   Logo,
   PhotoCard,
+  ReCAPTCHA,
   RichTextImageComponent,
   SocialMediaGroup,
   TextCard,
