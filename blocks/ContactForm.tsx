@@ -10,26 +10,27 @@ function ContactForm() {
 
   const handleSubmit = useCallback (
     async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-
-    const token = await executeRecaptcha('send-mail')
-    if(!token) {
-      setResponseMessage({isSuccessful: false, message: 'Failed to send the email.'})
-      return
-    }
-    
-    handleToken(token)
-
-    try {
-      const res = await sendEmail(values)
-      if (res.status === 200) {
-        setResponseMessage({isSuccessful: true, message: 'Thank you for your message.'})
+      e.preventDefault()
+      
+      const token = await executeRecaptcha('submit')
+      
+      if(!token) {
+        setResponseMessage({isSuccessful: false, message: 'Failed to send the email.'})
+        return
       }
-    } catch (error) {
-      console.log(error)
-      setResponseMessage({isSuccessful: false, message: 'Something went wrong. Please try again'})
-    }
-  },[executeRecaptcha, values, handleToken])
+     
+      await handleToken(token)
+
+      try {
+        const res = await sendEmail(values)
+        if (res.status === 200) {
+          setResponseMessage({isSuccessful: true, message: 'Thank you for your message.'})
+        }
+      } catch (error) {
+        console.log(error)
+        setResponseMessage({isSuccessful: false, message: 'Something went wrong. Please try again'})
+      }
+    },[executeRecaptcha, handleToken, values])
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col">

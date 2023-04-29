@@ -1,6 +1,5 @@
 import { ContactForm, PageHeader } from '@/blocks'
 import { PageHeaderProps } from '@/types/pageHeaderProps'
-import { siteInfo } from '@/settings'
 
 const contactHeaderProps: PageHeaderProps = {
   title: 'Contact',

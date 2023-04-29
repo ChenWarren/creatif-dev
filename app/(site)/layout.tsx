@@ -1,5 +1,5 @@
 import '../globals.css'
-import siteInfo from '@/settings/site-confit'
+import { siteInfo } from '@/settings'
 import { NavBar, Footer } from '@/blocks'
 import { GoogleAnalytics, ReCaptchaV3Provider } from '@/components'
 

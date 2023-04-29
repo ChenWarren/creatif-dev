@@ -10,6 +10,7 @@ const siteInfo = {
   baseUrl: 'creatif.dev', //Base url
   gtagId: 'G-6XH4SQQ5PW', // Google Analytics ID
   siteKey: '6LdyF8slAAAAAIocmQPazBQEGXEb28SDt0b6QGqR', //recaptcha site key
+  //siteKey: '6LdFlsslAAAAAO9xA6Nw3BHz6Z4TdL0VOiKrzdDT', //Local test key
 }
 
 export default siteInfo
