@@ -24,8 +24,6 @@ function ContactForm() {
       const res = await sendEmail(values)
       if (res.status === 200) {
         setResponseMessage({isSuccessful: true, message: 'Thank you for your message.'})
-      } else {
-        setResponseMessage({isSuccessful: false, message: 'Something went wrong. Please try again'})
       }
     } catch (error) {
       console.log(error)
