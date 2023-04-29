@@ -3,6 +3,7 @@
 import { Button } from "./Button"
 import { Card } from "./Card"
 import { FooterMenu } from "./FooterMenu"
+import { GoogleAnalytics } from "./GoogleAnalytics"
 import { Logo } from "./Logo"
 import { PhotoCard } from "./PhotoCard"
 import { RichTextImageComponent } from "./RichTextImageComponent"
@@ -13,6 +14,7 @@ export {
   Button,
   Card,
   FooterMenu,
+  GoogleAnalytics,
   Logo,
   PhotoCard,
   RichTextImageComponent,
