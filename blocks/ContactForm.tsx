@@ -1,24 +1,28 @@
 "use client"
 import { useContactForm, sendEmail } from "@/lib"
+import { useState } from "react"
 
 function ContactForm() {
   const { values, handleChange, handleTextareaChange } = useContactForm()
+  const [responseMessage, setResponseMessage] = useState({ isSuccessful: false, message: ''})
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+    
     try {
-      const req = await sendEmail(values)
-      if (req.status === 200) {
-        console.log('success')
+      const res = await sendEmail(values)
+      if (res.status === 200) {
+        setResponseMessage({isSuccessful: true, message: 'Thank you for your message.'})
       }
     } catch (error) {
       console.log(error)
+      setResponseMessage({isSuccessful: false, message: 'Something went wrong. Please try again'})
     }
   }
-  
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col">
+      {responseMessage.message != '' &&  <p>{responseMessage.message}</p> }
       <label className="mb-4 font-medium" htmlFor="name">Your Name <span className="text-red-500">*</span></label>
       <input 
         required

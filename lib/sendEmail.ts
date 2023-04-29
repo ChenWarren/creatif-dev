@@ -8,17 +8,11 @@ interface sentEmailProps {
 }
 
 async function sendEmail(props: sentEmailProps) {
-  const { name, email, subject, message } = props
-  console.log(props)
-
-  const { data } = await axios.post('/api/send-mail', {
-    name,
-    email,
-    subject,
-    message,
+  return await axios({
+    method: 'POST',
+    url: '/api/send-mail',
+    data: props
   })
-
-  return data
 } 
 
 export default sendEmail
