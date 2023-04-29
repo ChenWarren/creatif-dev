@@ -1,10 +1,8 @@
 "use client"
 
-import { GTM_ID } from "@/lib"
 import Script from "next/script"
 
-
-export const GoogleAnalytics = () => {
+export const GoogleAnalytics = ({GTM_ID}: {GTM_ID:string}) => {
 
   return (
     <>
@@ -21,13 +19,7 @@ export const GoogleAnalytics = () => {
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
 
-          gtag('consent', 'default', {
-              'analytics_storage': 'denied'
-          });
-          
-          gtag('config', '${GTM_ID}', {
-              page_path: window.location.pathname,
-          });
+          gtag('config', '${GTM_ID}');
           `,
         }}
       />
