@@ -58,3 +58,4 @@ const verifyRecaptcha = async (token: string) => {
   return await axios.post(verificationUrl)
 }
 
+//https://vercel.com/guides/sending-emails-from-an-application-on-vercel
