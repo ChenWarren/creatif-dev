@@ -8,10 +8,16 @@ import {
   HomeBlog, 
   HomeProjects,
 } from "@/blocks"
+import { siteInfo } from '@/settings'
 import { Blog } from "@/types/blog"
 import { Project } from "@/types/project"
 import { getBlogs } from "@/sanity/util/blog-controller"
 import { getProjects } from "@/sanity/util/project-controller"
+
+export const metadata = {
+  title: `Home | ${siteInfo.title}`,
+  description: siteInfo.description,
+}
 
 export default async function Home() {
   const blogs: Blog[] = await getBlogs()

@@ -3,10 +3,6 @@ import { siteInfo } from '@/settings'
 import { NavBar, Footer } from '@/blocks'
 import { GoogleAnalytics } from '@/components'
 
-export const metadata = {
-  title: siteInfo.title,
-  description: siteInfo.description,
-}
 
 export default function RootLayout({
   children,

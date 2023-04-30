@@ -3,6 +3,17 @@ import Image from "next/image"
 import { RichTextImageComponent } from "@/components"
 import { PortableText } from "@portabletext/react"
 import { Blog } from "@/types/blog"
+import { siteInfo } from '@/settings'
+
+export async function generateMetadata({params}: {params: {slug: string}}) {
+  const { slug } = params
+  const project = await getBlog(slug)
+
+  return {
+    title:`${project.title} | ${siteInfo.title}`,
+    description: project.excerpt
+  }
+}
 
 export default async function Post({params}: {params: {slug: string}}) {
   const { slug } = params

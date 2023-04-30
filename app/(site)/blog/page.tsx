@@ -3,12 +3,17 @@ import { getBlogs } from "@/sanity/util/blog-controller"
 import { Blog } from "@/types/blog"
 import { PageHeaderProps } from "@/types/pageHeaderProps"
 import { PageHeader } from '@/blocks'
-
+import { siteInfo } from '@/settings'
 
 const blogHeaderProps: PageHeaderProps = {
   title:  'Blog',
   subtitle: 'Featured Post',
   description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem. Quisquam, quidem. Quisquam, quidem. Quisquam, quidem. Quisquam, quidem. Quisqu'
+}
+
+export const metadata = {
+  title: `${blogHeaderProps.title} | ${siteInfo.title}`,
+  description: blogHeaderProps.description,
 }
 
 export default async function Blog() {

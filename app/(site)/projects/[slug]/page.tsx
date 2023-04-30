@@ -1,7 +1,18 @@
 import { getProject } from '@/sanity/util/project-controller'
 import { RichTextImageComponent } from '@/components'
 import { PortableText } from '@portabletext/react'
+import { siteInfo } from '@/settings'
 import Image from 'next/image'
+
+export async function generateMetadata({params}: {params: {slug: string}}) {
+  const { slug } = params
+  const project = await getProject(slug)
+
+  return {
+    title: `${project.name} | ${siteInfo.title}`,
+    description: project.excerpt
+  }
+}
 
 export default async function Project({params}: {params: {slug: string}}) {
   const { slug } = params

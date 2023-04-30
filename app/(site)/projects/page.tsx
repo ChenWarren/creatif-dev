@@ -2,12 +2,18 @@ import { getProjects } from '@/sanity/util/project-controller'
 import { Project } from '@/types/project'
 import { Card } from '@/components'
 import { PageHeader } from '@/blocks'
+import { siteInfo } from '@/settings'
 import { PageHeaderProps } from '@/types/pageHeaderProps'
 
 const projectHeaderProps: PageHeaderProps = {
   title:  'Projects',
   subtitle: 'Featured Projects',
   description: 'Here are a few of my projects',
+}
+
+export const metadata = {
+  title: `${projectHeaderProps.title} | ${siteInfo.title}`,
+  description: projectHeaderProps.description,
 }
 
 export default async function Projects() {

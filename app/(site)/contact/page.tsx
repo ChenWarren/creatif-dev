@@ -1,10 +1,16 @@
 import { ContactForm, PageHeader } from '@/blocks'
+import { siteInfo } from '@/settings'
 import { PageHeaderProps } from '@/types/pageHeaderProps'
 
 const contactHeaderProps: PageHeaderProps = {
   title: 'Contact',
   subtitle: 'Get in touch',
   description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet ipsum nibh. Ut velit urna. Etiam eget nisl nec nisl placerat viverra.'
+}
+
+export const metadata = {
+  title: `${contactHeaderProps.title} | ${siteInfo.title}`,
+  description: contactHeaderProps.description,
 }
 
 export default function Contac() {
