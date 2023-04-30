@@ -42,11 +42,11 @@ export async function POST(request: Request, response: Response) {
 
   transporter.sendMail(message, (err, info) => {
     if(err) {
-      return new Response("Error sending message")
+      return new Response("Error sending message", {status: 501})
     } 
   })
 
-  return new Response("Message sent")
+  return new Response("Message sent", {status: 200})
 }
 
 
