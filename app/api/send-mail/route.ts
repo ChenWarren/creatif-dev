@@ -9,10 +9,6 @@ interface EmailMessage {
   html: string
 }
 
-export async function GET(request: Request) {
-  return new Response('Hello World')
-}
-
 export async function POST(request: Request, response: Response) {
   const body = await request.json()
   const token = body.token
