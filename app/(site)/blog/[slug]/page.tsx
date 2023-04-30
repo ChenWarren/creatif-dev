@@ -30,8 +30,10 @@ export default async function Post({params}: {params: {slug: string}}) {
           height={50}
           className="rounded-full mr-2"
         />
-        <h3>{post.author.name}</h3>
-        <p>{post._createAt && post._createAt.toLocaleDateString()}</p>
+        <div className="flex flex-col">
+          <h3 className="font-medium">{post.author.name}</h3>
+          <p className="text-gray-500 text-sm">{new Date(post.publishedAt).toDateString()}</p>
+        </div>
       </div>
       <article>
         <div className="w-full flex justify-center">

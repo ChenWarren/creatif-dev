@@ -10,6 +10,7 @@ export async function getBlogs(): Promise<Blog[]> {
       _createAt,
       title,
       featured,
+      publishedAt,
       author->{
         name,
         "profile_image": profile_image.asset->url,
@@ -30,6 +31,7 @@ export async function getBlog(slug: string): Promise<Blog> {
       _createAt,
       title,
       featured,
+      publishedAt,
       author->{
         name,
         "profile_image": profile_image.asset->url,

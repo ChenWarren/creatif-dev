@@ -63,6 +63,11 @@ const blog = {
       ]
     },
     {
+      name: "publishedAt",
+      title: "Published at",
+      type: "datetime"
+    },
+    {
       name: "excerpt",
       title: "Excerpt",
       type: "text"

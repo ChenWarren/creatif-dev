@@ -7,6 +7,7 @@ export type Blog = {
   _createAt: Date,
   title: string,
   author: Author,
+  publishedAt: Date,
   featured: boolean,
   categories: Category,
   slug: string,
