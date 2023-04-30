@@ -18,7 +18,7 @@ export async function POST(request: Request, response: Response) {
   const token = body.token
 
   const res = await verifyRecaptcha(token)
-  if(!res.data.success || res.data.score < 0.5) {
+  if(!res.data.success) {
     return new Response("Invalid recaptcha", {status: 401})
   }
   
