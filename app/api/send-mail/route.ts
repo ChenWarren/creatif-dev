@@ -15,12 +15,13 @@ export async function POST(request: Request, response: Response) {
 
   const res = await verifyRecaptcha(token)
   if(!res.data.success) {
-    return new Response("Invalid recaptcha", {status: 401})
+    const response = new Response("Invalid recaptcha", {status: 401})
+    return response
   }
   
   const message: EmailMessage = {
     from: body.email,
-    to: process.env.EMAIL_ADDRESS || 'creatif.dev@gmail.com',
+    to: process.env.EMAIL_ADDRESS || '',
     subject: body.subject,
     text: `Sent from: ${body.email} \n\n Message: ${body.message} \n\n`,
     html: `<p>Sent from: ${body.email} </p> <p> Message: ${body.message}</p>`
@@ -38,11 +39,14 @@ export async function POST(request: Request, response: Response) {
 
   transporter.sendMail(message, (err, info) => {
     if(err) {
-      return new Response("Error sending message", {status: 501})
-    } 
+      console.log(err)
+      return new Response("Error sending email", {status: 500})
+    } else {
+      console.log(info.response)
+      return new Response("Email sent", {status: 200})
+    }
   })
-
-  return new Response("Message sent", {status: 200})
+  return new Response("Email sent", {status: 200})
 }
 
 
@@ -53,3 +57,4 @@ const verifyRecaptcha = async (token: string) => {
 
   return await axios.post(verificationUrl)
 }
+
