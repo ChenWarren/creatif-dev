@@ -1,5 +1,5 @@
 import '../globals.css'
-import siteInfo from '@/settings/site-confit'
+import { siteInfo } from '@/settings'
 
 export const metadata = {
   title: siteInfo.title,

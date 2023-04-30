@@ -2,8 +2,7 @@ import { defineConfig } from "sanity"
 import { deskTool } from "sanity/desk"
 import { codeInput } from "@sanity/code-input"
 import schemas from "./sanity/schemas"
-import siteInfo from "./settings/site-confit"
-
+import { siteInfo } from "./settings"
 const config = defineConfig({
   title: siteInfo.title,
   projectId: siteInfo.sanityProjectId,
