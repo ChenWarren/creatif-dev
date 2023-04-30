@@ -20,7 +20,7 @@ export async function POST(request: Request, response: Response) {
   
   const message: EmailMessage = {
     from: body.email,
-    to: process.env.EMAIL_ADDRESS || '',
+    to: process.env.EMAIL_ADDRESS || 'creatif.dev@gmail.com',
     subject: body.subject,
     text: `Sent from: ${body.email} \n\n Message: ${body.message} \n\n`,
     html: `<p>Sent from: ${body.email} </p> <p> Message: ${body.message}</p>`
