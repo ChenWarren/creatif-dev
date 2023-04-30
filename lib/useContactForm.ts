@@ -27,17 +27,18 @@ function useContactForm() {
     })
   }
 
-  const handleToken = (token: string) => {
-    setValues(prevState => {
-      return {
-        ...prevState,
-        token: token
-      }
+  // Function to clear values
+  const clearValues = () => {
+    setValues({
+      token: '',
+      name: '',
+      email: '',
+      subject: '',
+      message: ''
     })
-  
   }
 
-  return { values, handleChange, handleTextareaChange,  handleToken}
+  return { values, handleChange, handleTextareaChange, clearValues}
 }
 
 export default useContactForm

@@ -1,15 +1,14 @@
 "use client"
 import { useContactForm, sendEmail } from "@/lib"
 import { useReCaptcha } from "next-recaptcha-v3"
-import { useCallback, useState } from "react"
+import { useState } from "react"
 
 function ContactForm() {
-  const { values, handleChange, handleTextareaChange, handleToken } = useContactForm()
+  const { values, handleChange, handleTextareaChange, clearValues } = useContactForm()
   const [responseMessage, setResponseMessage] = useState({ isSuccessful: false, message: ''})
   const { executeRecaptcha } = useReCaptcha()
 
-  const handleSubmit = useCallback (
-    async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault()
       
       const token = await executeRecaptcha('submit')
@@ -19,22 +18,30 @@ function ContactForm() {
         return
       }
      
-      await handleToken(token)
+      values.token = token
 
       try {
         const res = await sendEmail(values)
         if (res.status === 200) {
           setResponseMessage({isSuccessful: true, message: 'Thank you for your message.'})
+          // reset form and set value to ''
+          clearValues()
+        } else if (res.status === 401){
+          setResponseMessage({isSuccessful: false, message: 'Invalid token. Please try again.'})
+        } else {
+          setResponseMessage({isSuccessful: false, message: 'Oops!Something went wrong. Please try again.'})
         }
       } catch (error) {
-        console.log(error)
         setResponseMessage({isSuccessful: false, message: 'Something went wrong. Please try again'})
       }
-    },[executeRecaptcha, handleToken, values])
+    }
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col">
-      {responseMessage.message != '' &&  <p>{responseMessage.message}</p> }
+      {responseMessage.message != '' 
+        && 
+        <p className="mb-4 text-[#FE7D75]">{responseMessage.message}</p> 
+      }
       <label className="mb-4 font-medium" htmlFor="name">Your Name <span className="text-red-500">*</span></label>
       <input 
         required
