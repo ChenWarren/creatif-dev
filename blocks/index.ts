@@ -10,6 +10,7 @@ import HomeProjects from "./HomeProjects"
 import NavBar from "./NavBar"
 import GridTest from "./GridTest"
 import PageHeader from "./PageHeader"
+import PostComment from "./PostComment"
 
 export {
   ContactForm,
@@ -21,4 +22,5 @@ export {
   NavBar,
   GridTest,
   PageHeader,
+  PostComment,
 }

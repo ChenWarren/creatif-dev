@@ -2,6 +2,7 @@
 
 import { Button } from "./Button"
 import { Card } from "./Card"
+import { CommentForm } from "./CommentForm"
 import { FooterMenu } from "./FooterMenu"
 import { GoogleAnalytics } from "./GoogleAnalytics"
 import { Logo } from "./Logo"
@@ -9,11 +10,13 @@ import { PhotoCard } from "./PhotoCard"
 import { ReCaptchaV3Provider } from "./ReCaptchaV3Provider"
 import { RichTextImageComponent } from "./RichTextImageComponent"
 import { SocialMediaGroup } from "./SocialMedia"
+import { SubmitButton } from "./SubmitButton"
 import { TextCard } from "./TextCard"
 
 export {
   Button,
   Card,
+  CommentForm,
   FooterMenu,
   GoogleAnalytics,
   Logo,
@@ -21,5 +24,6 @@ export {
   ReCaptchaV3Provider,
   RichTextImageComponent,
   SocialMediaGroup,
+  SubmitButton,
   TextCard,
 }

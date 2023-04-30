@@ -2,6 +2,7 @@
 import { useContactForm, sendEmail } from "@/lib"
 import { useReCaptcha } from "next-recaptcha-v3"
 import { useState } from "react"
+import { SubmitButton } from "@/components"
 
 function ContactForm() {
   const { values, handleChange, handleTextareaChange, clearValues } = useContactForm()
@@ -81,7 +82,7 @@ function ContactForm() {
         className="mb-6 p-4 outline-none border-b-2 focus:border-[#49CEB2] focus:border-b-2"
         rows={5}
       />
-      <button type="submit" value='Submit' className="w-52 uppercase bg-[#FE7D75] text-white my-2 px-8 py-2 rounded-full hover:brightness-110 active:bg-[#D7605F] active:opacity-70 active:ease-in-out">Send</button>
+      <SubmitButton text="Submit" />
     </form>
   )
 }

@@ -1,5 +1,6 @@
 import { getBlog } from "@/sanity/util/blog-controller"
 import Image from "next/image"
+import { PostComment } from "@/blocks"
 import { RichTextImageComponent } from "@/components"
 import { PortableText } from "@portabletext/react"
 import { Blog } from "@/types/blog"
@@ -49,6 +50,7 @@ export default async function Post({params}: {params: {slug: string}}) {
           <PortableText value={post.content} components={components}/>
         </div>
       </article>
+      <PostComment postSlug={slug}/>
     </main>
   )
 }
