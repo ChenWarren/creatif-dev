@@ -1,12 +1,10 @@
 import axios from 'axios'
-import { Transporter, createTransport } from 'nodemailer'
 
-interface EmailMessage {
-  from: string
-  to: string
-  subject: string
-  text: string
-  html: string
+interface sendData {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
 }
 
 export async function POST(request: Request, response: Response) {
@@ -19,34 +17,31 @@ export async function POST(request: Request, response: Response) {
     return response
   }
   
-  const message: EmailMessage = {
-    from: body.email,
-    to: process.env.EMAIL_ADDRESS || '',
+  const data: sendData = {
+    name: body.name,
+    email: body.email,
     subject: body.subject,
-    text: `Sent from: ${body.email} \n\n Message: ${body.message} \n\n`,
-    html: `<p>Sent from: ${body.email} </p> <p> Message: ${body.message}</p>`
+    message: body.message
   }
 
-  const transporter: Transporter<any> = createTransport({
-    host: 'smtp.gmail.com',
-    port: 465,
-    secure: true,
-    auth: {
-      user: process.env.EMAIL_ADDRESS,
-      pass: process.env.EMAIL_PASSWORD,
-    }
-  })
-
-  transporter.sendMail(message, (err, info) => {
-    if(err) {
-      console.log(err)
-      return new Response("Error sending email", {status: 500})
+  try {
+    const result = await axios({
+      method: 'POST',
+      url: process.env.MAILER_URL,
+      data: data
+    })
+  
+    if(result.status === 200) {
+      const response = new Response("Message sent", {status: 200})
+      return response
     } else {
-      console.log(info.response)
-      return new Response("Email sent", {status: 200})
+      const response = new Response("Message not sent", {status: 500})
+      return response
     }
-  })
-  return new Response("Email sent", {status: 200})
+  } catch (error) {
+    const response = new Response("Message not sent", {status: 500})
+    return response
+  }
 }
 
 
