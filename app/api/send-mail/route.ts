@@ -30,6 +30,8 @@ export async function POST(request: Request, response: Response) {
       url: process.env.MAILER_URL,
       data: data
     })
+
+    console.log(result.data)
   
     if(result.status === 200) {
       const response = new Response("Message sent", {status: 200})
