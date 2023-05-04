@@ -24,11 +24,17 @@ export async function POST(request: Request, response: Response) {
     message: body.message
   }
 
+  const headers = {
+    "Content-Type": "application/json",
+    Authorization: `Bearer ${process.env.SENT_MAIL_TOKEN}`
+  }
+
   try {
     const result = await axios({
       method: 'POST',
       url: process.env.MAILER_URL,
-      data: data
+      data: data,
+      headers: headers
     })
   
     if(result.status === 200) {
