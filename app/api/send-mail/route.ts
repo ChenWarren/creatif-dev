@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios, { AxiosRequestConfig } from 'axios'
 
 interface sendData {
   name: string;
@@ -24,18 +24,18 @@ export async function POST(request: Request, response: Response) {
     message: body.message
   }
 
-  const headers = {
-    "Content-Type": "application/json",
-    Authorization: `Bearer ${process.env.SENT_MAIL_TOKEN}`
-  }
+  const config: AxiosRequestConfig<sendData> = {
+    method: 'post',
+    url: process.env.MAILER_URL,
+    data,
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: "Bearer " + process.env.SENT_MAIL_TOKEN
+    }
+  } 
 
   try {
-    const result = await axios({
-      method: 'POST',
-      url: process.env.MAILER_URL,
-      data: data,
-      headers: headers
-    })
+    const result = await axios(config)
   
     if(result.status === 200) {
       const response = new Response("Message sent", {status: 200})
