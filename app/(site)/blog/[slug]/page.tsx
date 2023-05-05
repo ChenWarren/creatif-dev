@@ -19,8 +19,7 @@ export async function generateMetadata({params}: {params: {slug: string}}) {
 export default async function Post({params}: {params: {slug: string}}) {
   const { slug } = params
   const post: Blog = await getBlog(slug)
-  const comments: any[] = []
-  // const comments = await getBlogComments(post._id)
+  const comments = await getBlogComments(post._id)
 
   return (
     <main className='max-w-4xl min-h-screen mx-auto p-4 flex flex-col'>
