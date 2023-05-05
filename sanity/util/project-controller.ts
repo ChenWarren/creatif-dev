@@ -7,7 +7,7 @@ export async function getProjects(): Promise<Project[]> {
   return createClient(ClientConfig).fetch(
     groq `*[_type == "project" ] {
       _id,
-      _createAt,
+      _updatedAt,
       name,
       featured,
       "categories": categories[]->name,
@@ -23,7 +23,7 @@ export async function getProject(slug: string): Promise<Project> {
   return createClient(ClientConfig).fetch(
     groq `*[_type == "project" && slug.current == $slug ][0] {
       _id,
-      _createAt,
+      _updatedAt,
       name,
       featured,
       "categories": categories[]->name,

@@ -1,4 +1,5 @@
 import { Blog } from "@/types/blog"
+import { Comment } from "@/types/comment"
 import ClientConfig from "../config/client"
 import { createClient, groq } from "next-sanity"
 
@@ -7,7 +8,7 @@ export async function getBlogs(): Promise<Blog[]> {
   return createClient(ClientConfig).fetch(
     groq `*[_type == "blog" ] {
       _id,
-      _createAt,
+      _updatedAt,
       title,
       featured,
       publishedAt,
@@ -28,7 +29,7 @@ export async function getBlog(slug: string): Promise<Blog> {
   return createClient(ClientConfig).fetch(
     groq `*[_type == "blog" && slug.current == $slug ][0] {
       _id,
-      _createAt,
+      _updatedAt,
       title,
       featured,
       publishedAt,
@@ -44,5 +45,16 @@ export async function getBlog(slug: string): Promise<Blog> {
       content
     }`,
     {slug}
+  )
+}
+
+export async function getBlogComments(postId: string): Promise<Comment[]> {
+  return createClient(ClientConfig).fetch(
+    groq `*[_type == "comment" && references($postId)] {
+      _id,
+      _updatedAt,
+      name,
+      comment,
+    }`
   )
 }
