@@ -42,7 +42,7 @@ export default async function Post({params}: {params: {slug: string}}) {
           <PortableText value={post.content} components={components}/>
         </div>
       </article>
-      <PostComment comments={post.comments}/>
+      <PostComment comments={post.comments} _id={post._id}/>
     </main>
   )
 }

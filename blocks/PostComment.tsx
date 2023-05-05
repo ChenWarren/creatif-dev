@@ -5,12 +5,27 @@ import { useCommentForm } from "@/lib";
 import { useState } from "react";
 
 
-function PostComment({comments}: {comments: Comment[]}) {
+function PostComment({comments, _id}: {comments: Comment[], _id: string}) {
   const { values, handleChange, handleTextareaChange, clearValues } = useCommentForm()
   const [responseMessage, setResponseMessage] = useState({ isSuccessful: false, message: ''})
 
-  const handleSubmit = () => {
-    console.log(values)
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    try {
+      const res = await fetch('/api/comment', {
+        method: 'POST',
+        body: JSON.stringify({...values, _id}),
+      })
+      if (res.status === 200) {
+        setResponseMessage({isSuccessful: true, message: 'Comment added'})
+        // reset form and set value to ''
+        clearValues()
+      } else {
+        setResponseMessage({isSuccessful: false, message: 'Something went wrong. Please try again'})
+      }
+    } catch  (error) {
+      setResponseMessage({isSuccessful: false, message: 'Something went wrong. Please try again'})
+    }
   }
 
   return (
