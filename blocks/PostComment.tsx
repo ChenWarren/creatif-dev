@@ -1,19 +1,52 @@
-import { CommentForm } from "@/components"
+"use client"
+import { CommentForm, AvatarWidget, SubmitButton } from "@/components"
 import { Comment } from "@/types/comment";
-import { getBlogComments } from "@/sanity/util/blog-controller"
+import { useCommentForm } from "@/lib";
+import { useState } from "react";
 
 
 function PostComment({comments}: {comments: Comment[]}) {
-  console.log(comments)
+  const { values, handleChange, handleTextareaChange, clearValues } = useCommentForm()
+  const [responseMessage, setResponseMessage] = useState({ isSuccessful: false, message: ''})
+
+  const handleSubmit = () => {
+    console.log(values)
+  }
 
   return (
     <>
-      {comments &&
       <div>
-        <h3 className="text-xl font-medium mb-4">PostComment</h3>
-        <CommentForm/>
+        <h3 className="text-xl font-medium mb-4">Comments</h3>
+        { comments && comments.map((comment) => (
+          <div key={comment._id} className="mb-10">
+            <AvatarWidget props={{image: '', name: comment.name, description: new Date(comment._updatedAt).toDateString()}}/>
+            <p className="pl-14">{comment.text}</p>
+          </div>
+        ))}
+        <form onSubmit={handleSubmit} className="flex flex-col sm:ml-14 max-w-xl">
+          {responseMessage.message != '' 
+          && <p className="mb-4 text-[#FE7D75]">{responseMessage.message}</p>}
+          <label className="my-4 font-medium" htmlFor="comment">Your comment <span className="text-red-500">*</span></label>
+          <textarea 
+            required
+            id='comment'
+            value={values.comment}
+            onChange={handleTextareaChange}
+            className="mb-6 p-4 outline-none border-b-2 focus:border-[#49CEB2] focus:border-b-2"
+            rows={5}
+          />
+          <label className="mb-4 font-medium" htmlFor="name">Your Name <span className="text-red-500">*</span></label>
+          <input 
+            required
+            type="text" 
+            id='name'
+            value={values.name}
+            onChange={handleChange}
+            className="p-4 mb-6 outline-none border-b-2 focus:border-[#49CEB2] focus:border-b-2"
+          />
+          <SubmitButton text="Submit"/>
+        </form>
       </div>
-      }
     </>
   )
 }

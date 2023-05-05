@@ -42,19 +42,9 @@ export async function getBlog(slug: string): Promise<Blog> {
       "image": image.asset->url,
       url,
       excerpt,
-      content
+      content,
+      "comments": *[_type == "comment" && references(^._id)]
     }`,
     {slug}
-  )
-}
-
-export async function getBlogComments(postId: string): Promise<Comment[]> {
-  return createClient(ClientConfig).fetch(
-    groq `*[_type == "comment" && references($postId)] {
-      _id,
-      _updatedAt,
-      name,
-      comment,
-    }`
   )
 }

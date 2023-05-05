@@ -1,6 +1,7 @@
 import { PortableTextBlock } from "sanity"
 import { Author } from "./author"
 import { Category } from "./category"
+import { Comment } from "./comment"
 
 export type Blog = {
   _id: string,
@@ -15,4 +16,5 @@ export type Blog = {
   url: string,
   excerpt: string,
   content: PortableTextBlock[]
+  comments: Comment[]
 }

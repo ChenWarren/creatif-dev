@@ -1,4 +1,4 @@
-import { getBlog, getBlogComments } from "@/sanity/util/blog-controller"
+import { getBlog } from "@/sanity/util/blog-controller"
 import Image from "next/image"
 import { PostComment } from "@/blocks"
 import { AvatarWidget, RichTextImageComponent } from "@/components"
@@ -19,7 +19,6 @@ export async function generateMetadata({params}: {params: {slug: string}}) {
 export default async function Post({params}: {params: {slug: string}}) {
   const { slug } = params
   const post: Blog = await getBlog(slug)
-  const comments = await getBlogComments(post._id)
 
   return (
     <main className='max-w-4xl min-h-screen mx-auto p-4 flex flex-col'>
@@ -43,8 +42,7 @@ export default async function Post({params}: {params: {slug: string}}) {
           <PortableText value={post.content} components={components}/>
         </div>
       </article>
-      {comments.length > 0 
-      && <PostComment comments={comments}/> }
+      <PostComment comments={post.comments}/>
     </main>
   )
 }
