@@ -9,7 +9,7 @@ function PostComment({_id, slug, comments}: {_id: string, slug: string, comments
   const [responseMessage, setResponseMessage] = useState({ isSuccessful: false, message: ''})
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>){
-    // e.preventDefault()
+    e.preventDefault()
     try {
       const res = await fetch('/api/comment', {
         method: 'POST',
