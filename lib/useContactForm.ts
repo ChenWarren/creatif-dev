@@ -1,3 +1,6 @@
+//TODO: Make a resuable form component or class?
+
+
 import { useState } from "react"
 
 function useContactForm() {

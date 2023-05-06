@@ -11,6 +11,7 @@ export async function GET(request: Request, response: Response) {
 export async function POST(request: Request, response: Response) {
   const { name, comment, _id} = await request.json()
   
+  // TODO: make a reusable client
   const client = createClient(ClientConfig)
   try{
     await client.create({
