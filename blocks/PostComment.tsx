@@ -9,7 +9,7 @@ function PostComment({_id, slug, comments}: {_id: string, slug: string, comments
   const [responseMessage, setResponseMessage] = useState({ isSuccessful: false, message: ''})
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>){
-    e.preventDefault()
+    // e.preventDefault()
     try {
       const res = await fetch('/api/comment', {
         method: 'POST',
@@ -19,12 +19,12 @@ function PostComment({_id, slug, comments}: {_id: string, slug: string, comments
         // reset form and set value to ''
         clearValues()
         // update comments
-        setResponseMessage({isSuccessful: true, message: ""})
+        setResponseMessage({isSuccessful: true, message: "Thnak you for your comment!"})
       } else {
-        setResponseMessage({isSuccessful: false, message: 'Something went wrong. Please try again'})
+        setResponseMessage({isSuccessful: false, message: 'Something went wrong. Please try again.'})
       }
     } catch  (error) {
-      setResponseMessage({isSuccessful: false, message: 'Something went wrong. Please try again'})
+      setResponseMessage({isSuccessful: false, message: 'Something went wrong. Please try again.'})
     }
   }
 
