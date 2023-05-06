@@ -1,17 +1,17 @@
-"use client"
+'use client'
 import { CommentForm, AvatarWidget, SubmitButton } from "@/components"
 import { Comment } from "@/types/comment";
 import { useCommentForm } from "@/lib";
-import { useState } from "react";
+import React, { useState } from "react";
+import { revalidatePath } from "next/cache";
 
 
-function PostComment({_id, comments}: {_id: string, comments: Comment[]}) {
+function PostComment({_id, slug, comments}: {_id: string, slug: string, comments: Comment[]}) {
 
   const { values, handleChange, handleTextareaChange, clearValues } = useCommentForm()
   const [responseMessage, setResponseMessage] = useState({ isSuccessful: false, message: ''})
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
+  async function handleSubmit(){
     try {
       const res = await fetch('/api/comment', {
         method: 'POST',
@@ -20,6 +20,7 @@ function PostComment({_id, comments}: {_id: string, comments: Comment[]}) {
       if (res.status === 200) {
         // reset form and set value to ''
         clearValues()
+        revalidatePath(`/blog/${slug}`)
       } else {
         setResponseMessage({isSuccessful: false, message: 'Something went wrong. Please try again'})
       }
