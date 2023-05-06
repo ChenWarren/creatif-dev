@@ -3,7 +3,6 @@
  */
 import { createClient } from "next-sanity"
 import ClientConfig from "@/sanity/config/client"
-import { getCommentsByPostId } from "@/sanity/util/blog-controller"
 
 export async function GET(request: Request, response: Response) {
   return new Response("Hello")
@@ -23,8 +22,7 @@ export async function POST(request: Request, response: Response) {
         _ref: _id
       }
     })
-    const comments = await getCommentsByPostId(_id)
-    return new Response(JSON.stringify(comments), { status: 200 })
+    return new Response("Comment added",  { status: 200 })
   } catch (errer) {
     return new Response("Somthing went wrong", { status: 500 })
   }

@@ -55,7 +55,7 @@ export async function getCommentsByPostId(postId: string): Promise<Comment[]> {
       _id,
       _updatedAt,
       name,
-      text, 
+      commentText, 
     }`,
     {postId}
   )

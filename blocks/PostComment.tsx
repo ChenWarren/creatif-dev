@@ -2,7 +2,8 @@
 import { CommentForm, AvatarWidget, SubmitButton } from "@/components"
 import { Comment } from "@/types/comment";
 import { useCommentForm } from "@/lib";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { getCommentsByPostId } from "@/sanity/util/blog-controller";
 
 
 function PostComment({_id, slug, comments}: {_id: string, slug: string, comments: Comment[]}) {
@@ -10,6 +11,16 @@ function PostComment({_id, slug, comments}: {_id: string, slug: string, comments
   const { values, handleChange, handleTextareaChange, clearValues } = useCommentForm()
   const [responseMessage, setResponseMessage] = useState({ isSuccessful: false, message: ''})
 
+  const getInitComments = async (id:string) => {
+    const initComments = await getCommentsByPostId(id)
+    setPostComments(initComments)
+  }
+
+  useEffect(()=>{
+    getInitComments(_id)
+  }, [responseMessage.isSuccessful])
+
+  
   async function handleSubmit(){
     try {
       const res = await fetch('/api/comment', {
@@ -18,8 +29,9 @@ function PostComment({_id, slug, comments}: {_id: string, slug: string, comments
       })
       if (res.status === 200) {
         // reset form and set value to ''
-        console.log(res.body)
         clearValues()
+        // update comments
+        setResponseMessage({isSuccessful: true, message: ""})
       } else {
         setResponseMessage({isSuccessful: false, message: 'Something went wrong. Please try again'})
       }
@@ -32,7 +44,7 @@ function PostComment({_id, slug, comments}: {_id: string, slug: string, comments
     <>
       <div>
         <h3 className="text-xl font-medium mb-4">Comments</h3>
-        { comments && comments.map((comment) => (
+        { PostComments && PostComments.map((comment) => (
           <div key={comment._id} className="mb-10">
             <AvatarWidget props={{image: '', name: comment.name, description: new Date(comment._updatedAt).toDateString()}}/>
             <p className="pl-14">{comment.commentText}</p>
