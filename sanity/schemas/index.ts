@@ -5,6 +5,8 @@ import { postCategory, projectCategory } from "./category"
 import author from "./author"
 import menuItem from "./menuItem"
 import menuList from "./menuList"
+import settings from "./settings"
+
 
 const schemas = [
   author,
@@ -15,6 +17,7 @@ const schemas = [
   projectCategory,
   menuItem,
   menuList,
+  settings,
 ]
 
 export default schemas

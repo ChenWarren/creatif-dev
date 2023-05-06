@@ -18,7 +18,6 @@ function PostComment({_id, slug, comments}: {_id: string, slug: string, comments
       if (res.status === 200) {
         // reset form and set value to ''
         clearValues()
-        // update comments
         setResponseMessage({isSuccessful: true, message: "Thnak you for your comment!"})
       } else {
         setResponseMessage({isSuccessful: false, message: 'Something went wrong. Please try again.'})

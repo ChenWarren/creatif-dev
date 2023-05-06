@@ -44,7 +44,9 @@ export default async function Post({params}: {params: {slug: string}}) {
           <PortableText value={post.content} components={components}/>
         </div>
       </article>
-      <PostComment _id={post._id} comments={post.comments} slug={post.slug}/>
+      { siteInfo.postComment 
+        && <PostComment _id={post._id} comments={post.comments} slug={post.slug}/>
+      }
     </main>
   )
 }
