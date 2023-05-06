@@ -1,20 +1,11 @@
-import { getBlog } from "@/sanity/util/blog-controller"
+"use client"
+import { getBlog, getCommentsByPostId } from "@/sanity/util/blog-controller"
 import Image from "next/image"
 import { PostComment } from "@/blocks"
 import { AvatarWidget, RichTextImageComponent } from "@/components"
 import { PortableText } from "@portabletext/react"
 import { Blog } from "@/types/blog"
-import { siteInfo } from '@/settings'
 
-export async function generateMetadata({params}: {params: {slug: string}}) {
-  const { slug } = params
-  const project = await getBlog(slug)
-
-  return {
-    title:`${project.title} | ${siteInfo.title}`,
-    description: project.excerpt
-  }
-}
 
 export default async function Post({params}: {params: {slug: string}}) {
   const { slug } = params
@@ -42,7 +33,7 @@ export default async function Post({params}: {params: {slug: string}}) {
           <PortableText value={post.content} components={components}/>
         </div>
       </article>
-      <PostComment comments={post.comments} _id={post._id}/>
+      <PostComment _id={post._id} comments={post.comments}/>
     </main>
   )
 }

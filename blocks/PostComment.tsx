@@ -5,7 +5,8 @@ import { useCommentForm } from "@/lib";
 import { useState } from "react";
 
 
-function PostComment({comments, _id}: {comments: Comment[], _id: string}) {
+function PostComment({_id, comments}: {_id: string, comments: Comment[]}) {
+
   const { values, handleChange, handleTextareaChange, clearValues } = useCommentForm()
   const [responseMessage, setResponseMessage] = useState({ isSuccessful: false, message: ''})
 
@@ -17,7 +18,6 @@ function PostComment({comments, _id}: {comments: Comment[], _id: string}) {
         body: JSON.stringify({...values, _id}),
       })
       if (res.status === 200) {
-        setResponseMessage({isSuccessful: true, message: 'Comment added'})
         // reset form and set value to ''
         clearValues()
       } else {
