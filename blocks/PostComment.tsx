@@ -3,11 +3,10 @@ import { CommentForm, AvatarWidget, SubmitButton } from "@/components"
 import { Comment } from "@/types/comment";
 import { useCommentForm } from "@/lib";
 import React, { useState } from "react";
-import { revalidatePath } from "next/cache";
 
 
 function PostComment({_id, slug, comments}: {_id: string, slug: string, comments: Comment[]}) {
-
+  const [PostComments, setPostComments] = useState<Comment[]>([])
   const { values, handleChange, handleTextareaChange, clearValues } = useCommentForm()
   const [responseMessage, setResponseMessage] = useState({ isSuccessful: false, message: ''})
 
@@ -19,8 +18,8 @@ function PostComment({_id, slug, comments}: {_id: string, slug: string, comments
       })
       if (res.status === 200) {
         // reset form and set value to ''
+        console.log(res.body)
         clearValues()
-        revalidatePath(`/blog/${slug}`)
       } else {
         setResponseMessage({isSuccessful: false, message: 'Something went wrong. Please try again'})
       }
@@ -36,7 +35,7 @@ function PostComment({_id, slug, comments}: {_id: string, slug: string, comments
         { comments && comments.map((comment) => (
           <div key={comment._id} className="mb-10">
             <AvatarWidget props={{image: '', name: comment.name, description: new Date(comment._updatedAt).toDateString()}}/>
-            <p className="pl-14">{comment.text}</p>
+            <p className="pl-14">{comment.commentText}</p>
           </div>
         ))}
         <form onSubmit={handleSubmit} className="flex flex-col sm:ml-14 max-w-xl">

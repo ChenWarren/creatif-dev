@@ -9,7 +9,8 @@ const comment = {
       readonly: true
     },
     {
-      name: 'commentText',
+      name: 'text',
+      title: 'Comment Text',
       type: 'text',
       readonly: true
     },
