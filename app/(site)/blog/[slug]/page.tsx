@@ -11,6 +11,10 @@ export default async function Post({params}: {params: {slug: string}}) {
   const { slug } = params
   const post: Blog = await getBlog(slug)
 
+  //TO_DO:
+  // useEffect to fetch post and comments
+  // when comment added refresh page
+
   return (
     <main className='max-w-4xl min-h-screen mx-auto p-4 flex flex-col'>
       <h1 className="sm:text-3xl text-2xl">{post.title}</h1>
