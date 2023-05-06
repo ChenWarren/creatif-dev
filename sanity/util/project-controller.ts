@@ -1,5 +1,5 @@
 import { Project } from "@/types/project"
-import ClientConfig from "../config/client"
+import {ClientConfig} from "../config/client"
 import { createClient, groq } from "next-sanity"
 
 

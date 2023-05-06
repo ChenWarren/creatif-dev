@@ -1,8 +1,7 @@
 /**
  * Handle comment for blog post
  */
-import { createClient } from "next-sanity"
-import ClientConfig from "@/sanity/config/client"
+import {ClientComment} from "@/sanity/config/client"
 
 export async function GET(request: Request, response: Response) {
   return new Response("Hello")
@@ -12,9 +11,8 @@ export async function POST(request: Request, response: Response) {
   const { name, comment, _id} = await request.json()
   
   // TODO: make a reusable client
-  const client = createClient(ClientConfig)
   try{
-    await client.create({
+    await ClientComment.create({
       _type: "comment",
       name,
       commentText: comment,

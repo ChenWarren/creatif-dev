@@ -1,6 +1,6 @@
 import { getBlog } from "@/sanity/util/blog-controller"
 import Image from "next/image"
-// import { PostComment } from "@/blocks"
+import { PostComment } from "@/blocks"
 import { AvatarWidget, RichTextImageComponent } from "@/components"
 import { PortableText } from "@portabletext/react"
 import { Blog } from "@/types/blog"
@@ -8,7 +8,6 @@ import { siteInfo } from '@/settings'
 
 
 export async function generateMetadata({params}: {params: {slug: string}}) {
-
   const { slug } = params
   const project = await getBlog(slug)
 
@@ -17,6 +16,7 @@ export async function generateMetadata({params}: {params: {slug: string}}) {
     description: project.excerpt
   }
 }
+
 
 export default async function Post({params}: {params: {slug: string}}) {
   const { slug } = params
@@ -44,7 +44,7 @@ export default async function Post({params}: {params: {slug: string}}) {
           <PortableText value={post.content} components={components}/>
         </div>
       </article>
-      {/* <PostComment _id={post._id} comments={post.comments} slug={post.slug}/> */}
+      <PostComment _id={post._id} comments={post.comments} slug={post.slug}/>
     </main>
   )
 }
