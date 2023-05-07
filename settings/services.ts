@@ -1,4 +1,4 @@
-import { Service } from "@/types/service"
+import { Service } from "@/types"
 import { SiNextdotjs, SiShopify } from 'react-icons/si'
 import { MdCloudUpload } from 'react-icons/md'
 

@@ -1,9 +1,9 @@
 import { getProject } from '@/sanity/util/project-controller'
-import { RichTextImageComponent } from '@/components'
+import { RichTextImageComponent, LinkButton } from '@/components'
 import { PortableText } from '@portabletext/react'
 import { siteInfo } from '@/settings'
 import Image from 'next/image'
-import Link from 'next/link'
+
 
 export async function generateMetadata({params}: {params: {slug: string}}) {
   const { slug } = params
@@ -35,14 +35,7 @@ export default async function Project({params}: {params: {slug: string}}) {
       <div className='flex gap-4'>
         { project.links && project.links.map(link => (
           <>
-            <Link 
-              key={link._id}
-              href={link.linkUrl} 
-              target='_blank'
-              className="uppercase bg-[#FE7D75] text-white my-2 px-8 py-2 rounded-full hover:brightness-110 active:bg-[#D7605F] active:opacity-70 active:ease-in-out"
-            >
-              {link.linkText}
-            </Link>
+            <LinkButton key={link._id} linkText={link.linkText} linkUrl={link.linkUrl} openNewTab={true}/>
           </>
         ))}
       </div>

@@ -9,8 +9,7 @@ import {
   HomeProjects,
 } from "@/blocks"
 import { siteInfo } from '@/settings'
-import { Blog } from "@/types/blog"
-import { Project } from "@/types/project"
+import { Blog, Project } from "@/types"
 import { getBlogs } from "@/sanity/util/blog-controller"
 import { getProjects } from "@/sanity/util/project-controller"
 

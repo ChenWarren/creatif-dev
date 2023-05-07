@@ -1,4 +1,4 @@
-import { TextCard, Button } from "@/components"
+import { TextCard, LinkButton } from "@/components"
 import { services } from "@/settings"
 
 export default function Hero() {
@@ -14,7 +14,7 @@ export default function Hero() {
             <p className="max-w-[500px] sm:text-lg mb-10 text-gray-100 text-center">
               Discover the Passion of Creatif.dev&apos;s Latest Web and App Solutions!
             </p>
-            <Button title="Get Started"/>
+            <LinkButton linkUrl="/contact" linkText="Get Started"/>
           </div>
         </div>
         <div className="sm:max-w-5xl sm:h-[400px] w-full h-52 sm:rounded-t-3xl bg-[url('/hero-main.png')] bg-cover bg-no-repeat"></div>

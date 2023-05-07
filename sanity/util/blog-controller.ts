@@ -1,5 +1,4 @@
-import { Blog } from "@/types/blog"
-import { Comment } from "@/types/comment"
+import { Blog, Comment } from "@/types"
 import {ClientConfig} from "../config/client"
 import { createClient, groq } from "next-sanity"
 

@@ -4,8 +4,7 @@ import Image from "next/image"
 import { PostComment } from "@/blocks"
 import { AvatarWidget, RichTextImageComponent } from "@/components"
 import { PortableText } from "@portabletext/react"
-import { Blog } from "@/types/blog"
-import { Setting } from "@/types/setting"
+import { Blog, Setting } from "@/types"
 import { siteInfo } from '@/settings'
 
 

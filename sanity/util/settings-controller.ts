@@ -1,4 +1,4 @@
-import { Setting } from "@/types/setting";
+import { Setting } from "@/types";
 import {ClientConfig} from "../config/client"
 import { createClient, groq } from "next-sanity"
 

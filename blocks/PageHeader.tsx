@@ -1,4 +1,4 @@
-import { PageHeaderProps } from "@/types/pageHeaderProps";
+import { PageHeaderProps } from "@/types";
 
 const pageHeaderProps: PageHeaderProps = {
   title: 'Title',

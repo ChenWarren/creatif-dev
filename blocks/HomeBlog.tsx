@@ -1,8 +1,8 @@
 // Home blog section
 // Display 4 featured blog posts 
 
-import { Card } from "../components/Card"
-import { Blog } from "@/types/blog"
+import { Card } from "@/components"
+import { Blog } from "@/types"
 
 export default function HomeBlog({
   featuredBlogs,

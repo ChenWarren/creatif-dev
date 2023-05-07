@@ -1,5 +1,5 @@
 import { PhotoCard } from "@/components"
-import { Project } from "@/types/project"
+import { Project } from "@/types"
 
 export default function HomeProjects({
   featuredProjects,

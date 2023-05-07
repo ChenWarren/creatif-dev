@@ -7,7 +7,7 @@
  */
 
 import Link from "next/link"
-import { MenuItem } from "@/types/menuItem";
+import { MenuItem } from "@/types";
 
 interface FooterMenuProps {
   title: string,

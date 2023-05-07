@@ -6,6 +6,7 @@ import { Card } from "./Card"
 import { CommentForm } from "./CommentForm"
 import { FooterMenu } from "./FooterMenu"
 import { GoogleAnalytics } from "./GoogleAnalytics"
+import { LinkButton } from "./LinkButton"
 import { Logo } from "./Logo"
 import { PhotoCard } from "./PhotoCard"
 import { ReCaptchaV3Provider } from "./ReCaptchaV3Provider"
@@ -21,6 +22,7 @@ export {
   CommentForm,
   FooterMenu,
   GoogleAnalytics,
+  LinkButton,
   Logo,
   PhotoCard,
   ReCaptchaV3Provider,

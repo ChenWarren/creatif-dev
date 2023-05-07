@@ -1,9 +1,8 @@
 import { getProjects } from '@/sanity/util/project-controller'
-import { Project } from '@/types/project'
+import { PageHeaderProps, Project } from '@/types'
 import { Card } from '@/components'
 import { PageHeader } from '@/blocks'
 import { siteInfo } from '@/settings'
-import { PageHeaderProps } from '@/types/pageHeaderProps'
 
 const projectHeaderProps: PageHeaderProps = {
   title:  'Projects',

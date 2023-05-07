@@ -1,7 +1,7 @@
 "use client"
 import Link from "next/link";
 import menuList from "@/settings/menu-list";
-import { MenuItem } from "@/types/menuItem";
+import { MenuItem } from "@/types";
 import { Logo } from "@/components";
 import { useState } from "react";
 import { IoMenu, IoClose } from "react-icons/io5";

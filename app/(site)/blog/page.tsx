@@ -1,7 +1,6 @@
 import { Card } from "@/components"
 import { getBlogs } from "@/sanity/util/blog-controller"
-import { Blog } from "@/types/blog"
-import { PageHeaderProps } from "@/types/pageHeaderProps"
+import { Blog, PageHeaderProps } from "@/types"
 import { PageHeader } from '@/blocks'
 import { siteInfo } from '@/settings'
 

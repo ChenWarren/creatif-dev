@@ -5,7 +5,7 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { Category } from "@/types/category"
+import { Category } from "@/types"
 
 interface PhotoCardProps {
   imgUrl: string

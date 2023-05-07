@@ -1,6 +1,6 @@
 'use client'
 import { CommentForm, AvatarWidget, SubmitButton } from "@/components"
-import { Comment } from "@/types/comment";
+import { Comment } from "@/types";
 import { useCommentForm } from "@/lib";
 import React, { useState } from "react";
 

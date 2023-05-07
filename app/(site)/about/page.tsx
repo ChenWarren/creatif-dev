@@ -1,5 +1,5 @@
 import { PageHeader } from '@/blocks'
-import { PageHeaderProps } from '@/types/pageHeaderProps'
+import { PageHeaderProps } from '@/types'
 import { siteInfo } from '@/settings'
 
 const aboutHeaderProps: PageHeaderProps = {

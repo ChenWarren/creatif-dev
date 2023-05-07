@@ -4,7 +4,7 @@
  * title: text title,
  * description: text description
  */
-import { Service } from '@/types/service'
+import { Service } from '@/types'
 
 export function TextCard({props}: {props: Service}) {
   return (

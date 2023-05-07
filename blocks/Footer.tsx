@@ -1,7 +1,6 @@
 import { siteInfo, socialMedia } from "@/settings"
 import { Logo, FooterMenu, SocialMediaGroup } from "@/components"
-import { MenuItem } from "@/types/menuItem"
-
+import { MenuItem } from "@/types"
 
 const usefullLinks: MenuItem[] = [
   {name: 'Link1', href: '#link1'},
