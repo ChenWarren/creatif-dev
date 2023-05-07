@@ -1,7 +1,7 @@
 const settings = {
   name: 'settings',
-  type: 'document',
   title: 'Settings',
+  type: 'document',
   fields: [
     {
       name: 'name',
@@ -9,9 +9,17 @@ const settings = {
       type: 'string',
     },
     {
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      options: {
+        source: 'name'
+      }
+    },
+    {
       name: 'description',
-      type: 'text',
       title: 'Description',
+      type: 'text',
     },
     {
       name: 'value',

@@ -38,9 +38,28 @@ const project = {
       ]
     },
     {
-      name: 'url',
-      title: 'URL',
-      type: 'url'
+      name: 'links',
+      title: 'Links',
+      type: 'array',
+      of: [
+        {
+          name: 'link',
+          title: 'Link',
+          type: 'document',
+          fields: [
+            {
+              name: 'linkText',
+              title: 'Link Text',
+              type: 'string'
+            },
+            {
+              name: 'linkUrl',
+              title: 'Link URL',
+              type: 'url'
+            }
+          ]
+        }
+      ]
     },
     {
       name: 'categories',
