@@ -3,9 +3,9 @@ import { Logo, FooterMenu, SocialMediaGroup } from "@/components"
 import { MenuItem } from "@/types"
 
 const usefullLinks: MenuItem[] = [
-  {name: 'Link1', href: '#link1'},
-  {name: 'Link2', href: '#link2'},
-  {name: 'Link3', href: '#link3'},
+  {_id: '1', name: 'Link1', link: '#link1'},
+  {_id: '2', name: 'Link2', link: '#link2'},
+  {_id: '3', name: 'Link3', link: '#link3'},
 ]
 
 export default function Footer() {

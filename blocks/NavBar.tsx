@@ -1,13 +1,11 @@
 "use client"
 import Link from "next/link";
-import menuList from "@/settings/menu-list";
 import { MenuItem } from "@/types";
 import { Logo } from "@/components";
 import { useState } from "react";
 import { IoMenu, IoClose } from "react-icons/io5";
 
-
-export default function NavBar() {
+export default function NavBar({menuList}: {menuList: MenuItem[]}) {
   const [menuOpen, setMenuOpen] = useState(false)
 
   const closeMenu = () => {
@@ -35,7 +33,7 @@ export default function NavBar() {
             {menuList.map((item) => (
               <Link
                 key={item.name}
-                href={item.href}
+                href={item.link}
                 className="hover:opacity-80"
               >
                 {item.name}
@@ -58,7 +56,7 @@ export function DropdownMenu({
       {menuList.map((item) => (
         <Link
           key={item.name}
-          href={item.href}
+          href={item.link}
           className="text-lg mb-4"
           onClick={closeMenu}
         >
