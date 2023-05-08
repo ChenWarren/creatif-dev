@@ -1,4 +1,4 @@
-import { MenuItem, MenuList } from "@/types";
+import { MenuList } from "@/types";
 import { Client } from "../config/client";
 import { groq } from "next-sanity";
 

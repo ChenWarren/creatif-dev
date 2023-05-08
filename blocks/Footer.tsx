@@ -2,13 +2,7 @@ import { siteInfo, socialMedia } from "@/settings"
 import { Logo, FooterMenu, SocialMediaGroup } from "@/components"
 import { MenuItem } from "@/types"
 
-const usefullLinks: MenuItem[] = [
-  {_id: '1', name: 'Link1', link: '#link1'},
-  {_id: '2', name: 'Link2', link: '#link2'},
-  {_id: '3', name: 'Link3', link: '#link3'},
-]
-
-export default function Footer() {
+export default function Footer({linkListCenter, linkListRight}: {linkListCenter: MenuItem[], linkListRight: MenuItem[]}) {
   return (
     <footer className="w-full flex flex-col bg-[#1B3A4D]">
       <section className="sm:h-[350px] text-white w-full max-w-5xl mx-auto p-4 grid sm:grid-cols-4 gap-8" >
@@ -20,10 +14,12 @@ export default function Footer() {
         <SocialMediaGroup props={socialMedia}/>
         </div>
         <div className="col-span-1 mt-10 hidden sm:block">
-          <FooterMenu title="Quick Links" menuList={usefullLinks}/>
+          {linkListCenter 
+            && <FooterMenu title="Quick Links" menuList={linkListCenter}/>}
         </div>
         <div className="col-span-1 mt-10 hidden sm:block">
-          <FooterMenu title="Usefull Links" menuList={usefullLinks}/>
+          {linkListRight 
+            && <FooterMenu title="Usefull Links" menuList={linkListRight}/>}
         </div>
 
       </section>

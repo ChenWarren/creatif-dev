@@ -1,10 +1,10 @@
 import { Project } from "@/types"
-import {ClientConfig} from "../config/client"
-import { createClient, groq } from "next-sanity"
+import { Client } from "../config/client"
+import { groq } from "next-sanity"
 
 
 export async function getProjects(): Promise<Project[]> {
-  return createClient(ClientConfig).fetch(
+  return Client.fetch(
     groq `*[_type == "project" ] {
       _id,
       _updatedAt,
@@ -19,7 +19,7 @@ export async function getProjects(): Promise<Project[]> {
 }
 
 export async function getProject(slug: string): Promise<Project> {
-  return createClient(ClientConfig).fetch(
+  return Client.fetch(
     groq `*[_type == "project" && slug.current == $slug ][0] {
       _id,
       _updatedAt,

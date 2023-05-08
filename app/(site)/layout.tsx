@@ -10,7 +10,10 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const menulist: MenuList = await getMenuList('primary-menu')
+  const primaryMenuData: MenuList = await getMenuList('primary-menu')
+  const footerListCenterData: MenuList = await getMenuList('footer-menu-center')
+  const footerListRightData: MenuList = await getMenuList('footer-menu-right')
+  const [menulist, footerListCenter, footerListRight ] = await Promise.all([primaryMenuData, footerListCenterData, footerListRightData])
 
   return (
     <html lang="en">
@@ -18,7 +21,7 @@ export default async function RootLayout({
         <GoogleAnalytics GTM_ID={siteInfo.gtagId}/>
         <NavBar menuList={menulist.menuItems}/>
           {children}
-        <Footer/>
+        <Footer linkListCenter={footerListCenter.menuItems} linkListRight={footerListRight.menuItems}/>
       </body>
     </html>
   )

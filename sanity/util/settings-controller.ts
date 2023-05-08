@@ -1,9 +1,9 @@
 import { Setting } from "@/types";
-import {ClientConfig} from "../config/client"
-import { createClient, groq } from "next-sanity"
+import { Client } from "../config/client";
+import { groq } from "next-sanity"
 
 export async function getSettings(): Promise<Setting[]> {
-  return createClient(ClientConfig).fetch(
+  return Client.fetch(
     groq `*[_type == "settings"] {
       _id,
       name,
@@ -13,7 +13,7 @@ export async function getSettings(): Promise<Setting[]> {
 }
 
 export async function getSetting(slug: string): Promise<Setting> {
-  return createClient(ClientConfig).fetch(
+  return Client.fetch(
     groq `*[_type == "settings" && slug.current == $slug][0] {
       _id,
       name,
